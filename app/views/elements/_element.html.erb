@@ -1,0 +1,10 @@
+<div class="element card">
+  <% if element.file.file? %>
+    <div class="card-image"><%= image_tag element.image.url %></div>
+  <% end %>
+  <div class="title"><%= element.title %></div>
+  <div class="description"><%= element.description %></div>
+  <% if element.element_link %>
+    <%= link_to "View More", element.element_link %>
+  <% end %>
+</div>

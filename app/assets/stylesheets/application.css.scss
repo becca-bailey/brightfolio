@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "materialize/components/color";
+$primary-color: color("black", "lighten-2") !default;
+@import 'materialize';
+
+@import "materialize/extras/nouislider";
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.clearfix::before, .clearfix::after {
+  content: ' ';
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+.container {
+  margin: 0 auto;
+  padding: 1%;
+  width: 90%;
+}
+
+/* LAYOUT CSS */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+/* =Top Bar
+-------------------------------------------------------------- */
+#top-bar {
+  background-color: #311c3a;
+}
+
+#top-bar a {
+  color: white;
+  /*display: inline-block;*/
+  font-size: .8em;
+  margin: 0 10px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+/*#top-bar a:hover {
+  background-color: #a91c44;
+}*/
+
+.btn-large {
+	width: 20%;
+}
+
+
+#notice  {
+  color: #43DFFF;
+  /*background-color: #C6FFF7;*/
+  padding: 1%;
+}
+
+.errors {
+	background-color: red;
+}
+
+.primary-img {
+	width: 100%;
+}
+
+.inline {
+  display: inline;
+}
+
+.title {
+background-color: #000000;
+color: teal;
+text-align: center;
+padding: 1%;
+}
+
+.main {
+  /*margin-left: 0;*/
+  background-color: #343838;
+  border-radius: 30px;
+
+}
+
+.edit {
+  width: 33%
+}
+
+.square {
+  text-align: center;
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+  background-color: teal;
+}
+
+.grid {
+  float: left;
+}
+
+.no-bottom {
+	border-bottom: 0px solid #ddd;
+}
+
+
+/*.main {*/
+    /*float: left;*/
+    /* clear: both; */
+/*}*/
+
+
+  @media all and (max-width: 600px) {
+    .main {
+      width: 100%;
+    }
+  }

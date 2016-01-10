@@ -1,28 +1,20 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
 
-  # GET /elements
-  # GET /elements.json
   def index
     @elements = Element.all
   end
 
-  # GET /elements/1
-  # GET /elements/1.json
-  def show
-  end
-
-  # GET /elements/new
   def new
     @element = Element.new
   end
 
-  # GET /elements/1/edit
   def edit
   end
 
-  # POST /elements
-  # POST /elements.json
+  def show
+  end
+
   def create
     @element = Element.new(element_params)
     @folio = Folio.find(params[:folio_id])
@@ -37,8 +29,6 @@ class ElementsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /elements/1
-  # PATCH/PUT /elements/1.json
   def update
     respond_to do |format|
       if @element.update(element_params)
@@ -51,8 +41,6 @@ class ElementsController < ApplicationController
     end
   end
 
-  # DELETE /elements/1
-  # DELETE /elements/1.json
   def destroy
     @element.destroy
     respond_to do |format|

@@ -10,11 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :folio_id %><br>
-    <%= f.number_field :folio_id %>
-  </div>
+  <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

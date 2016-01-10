@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require packery.pkgd
+//= require materialize-sprockets
 //= require draggabilly.pkgd.min
 //= require_tree .

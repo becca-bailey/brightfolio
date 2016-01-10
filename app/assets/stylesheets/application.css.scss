@@ -15,10 +15,12 @@
  */
 
 @import "materialize/components/color";
+@import "materialize/components/collapsible";
 $primary-color: color("black", "lighten-2") !default;
 @import 'materialize';
 
 @import "materialize/extras/nouislider";
+
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -44,7 +46,7 @@ $primary-color: color("black", "lighten-2") !default;
 .container {
   margin: 0 auto;
   padding: 1%;
-  width: 90%;
+  width: 95%;
 }
 
 /* LAYOUT CSS */
@@ -102,7 +104,7 @@ $primary-color: color("black", "lighten-2") !default;
 background-color: #000000;
 color: teal;
 text-align: center;
-padding: 1%;
+padding: 3%;
 }
 
 .main {
@@ -132,6 +134,9 @@ padding: 1%;
 	border-bottom: 0px solid #ddd;
 }
 
+.description {
+  padding: 3%;
+}
 
 /*.main {*/
     /*float: left;*/

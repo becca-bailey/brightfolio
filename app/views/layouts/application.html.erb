@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Brightfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,7 +16,22 @@
     <%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
-</div>
+</div> 
+
+<header>
+    <nav class="teal lighten-1" role="navigation">
+      <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo"><h4>BrightFolio</h4></a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to 'Folio', folios_path %></li>
+        </ul>
+      </div>
+        <ul id="nav-mobile" class="side-nav">
+          <li><%= link_to 'Folio', folios_path %></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </header> 
 
 <%= yield %>
 

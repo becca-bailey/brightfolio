@@ -1,5 +1,5 @@
 <%= form_for(@folio) do |f| %>
-<div class="errors">
+<!-- <div class="errors">
   <% if @folio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@folio.errors.count, "error") %> prohibited this folio from being saved:</h2>
@@ -11,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-</div>
+</div> -->
 
   <div class="field hide">
     <%= f.label :user_id %><br>

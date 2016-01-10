@@ -20,3 +20,9 @@ ElementView.prototype.render = function(elem) {
   var draggie = new Draggabilly( elem );
   $container.packery( 'bindDraggabillyEvents', draggie );
 };
+
+ElementView.prototype.update = function(data, elm_id) {
+  $("#" + elm_id + " .title").html(data.title);
+  $("#" + elm_id + " .description").html(data.description);
+  $("#" + elm_id + " .citation").html(data.citation);
+};

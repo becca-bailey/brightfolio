@@ -1,6 +1,12 @@
-<% if flash[:danger] %>
-  <%= flash[:danger] %>
-<% end %>
+<div class="container">
+    <div class="errors">
+    <i class="material-icons prefix">info</i>
+      <% if flash[:danger] %>
+        <%= flash[:danger] %>
+      <% end %>
+    </div>
+
+
 
 <%= form_for(:session, url: login_path) do |f| %>
 
@@ -13,8 +19,9 @@
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit "Login" %>
+    <%= f.submit "Login", class: :"waves-effect waves-light btn" %>
   </div>
 <% end %>
 
 <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+</div>

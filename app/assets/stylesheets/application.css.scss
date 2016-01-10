@@ -19,6 +19,7 @@ $primary-color: color("black", "lighten-2") !default;
 @import 'materialize';
 
 @import "materialize/extras/nouislider";
+
 /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
@@ -44,9 +45,15 @@ $primary-color: color("black", "lighten-2") !default;
 .container {
   margin: 0 auto;
   padding: 1%;
-  width: 90%;
+  width: 95%;
+  height: 100%;
 }
 
+#container:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
 /* LAYOUT CSS */
 .responsive-img {
     max-width: 100%;
@@ -58,17 +65,20 @@ $primary-color: color("black", "lighten-2") !default;
 
 /* =Top Bar
 -------------------------------------------------------------- */
-#top-bar {
-  background-color: #311c3a;
+.welcome {
+  background-color: teal;
+  color: #fff;
+  padding: .5%;
 }
 
-#top-bar a {
+.welcome a {
   color: white;
   /*display: inline-block;*/
   font-size: .8em;
   margin: 0 10px;
-  padding: 5px;
+  padding: .5%;
   text-transform: uppercase;
+  letter-spacing: 10%;
 }
 
 /*#top-bar a:hover {
@@ -84,10 +94,37 @@ $primary-color: color("black", "lighten-2") !default;
   color: #43DFFF;
   /*background-color: #C6FFF7;*/
   padding: 1%;
+  margin: 1%;
 }
 
 .errors {
-	background-color: red;
+	color: #FF814D;
+  padding: 20px;
+
+}
+
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #FFD3BF;
+  /*display: table;*/
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;}
+
+
+i.material-icons {
+  padding: 1px;
 }
 
 .primary-img {
@@ -102,7 +139,7 @@ $primary-color: color("black", "lighten-2") !default;
 background-color: #000000;
 color: teal;
 text-align: center;
-padding: 1%;
+padding: 3%;
 }
 
 .main {
@@ -132,12 +169,82 @@ padding: 1%;
 	border-bottom: 0px solid #ddd;
 }
 
+.description {
+  padding: 3%;
+}
 
+.file_input {
+  
+}
+
+textarea#element_description {
+  border: none;
+  background-color: #CAFEFB;
+  /*padding: 5px;*/
+}
 /*.main {*/
     /*float: left;*/
     /* clear: both; */
 /*}*/
 
+
+/*nav*/
+nav {
+  color: #ffffff;
+  background-color: #000000;
+  width: 100%;
+  height: $navbar-height-mobile;
+  line-height: $navbar-height-mobile;
+
+  a { color: $navbar-font-color; }
+
+  i.material-icons {
+    display: block;
+    font-size:3rem;
+    margin-bottom: -2px;
+  }
+}
+
+
+
+.waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
+  border: 0;
+  font-style: normal;
+  font-size: inherit;
+  text-transform: inherit;
+  background: none;
+}
+
+  /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+.input-field input[type='button'] {
+  background-color: teal;
+}
 
   @media all and (max-width: 600px) {
     .main {

@@ -1,4 +1,4 @@
-<%= form_for([@folio, @element]) do |f| %>
+<%= form_for([@folio, @element], multipart: true) do |f| %>
   <% if @element.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
@@ -10,20 +10,48 @@
       </ul>
     </div>
   <% end %>
+
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
   <div class="field">
+
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
+
   <div class="field">
     <%= f.label :citation %><br>
     <%= f.text_field :citation %>
   </div>
+
+  <div class="field">
+    <%= f.label :element_link %>
+    <%= f.text_field :element_link %>
+  </div>
+
+<!--   <div class="input-field col s12">
+    <%= radio_button_tag(:submission, "upload") %>
+    <%= label_tag(:submission_upload, "Upload a File") %>
+    <%= radio_button_tag(:submission, "url") %>
+    <%= label_tag(:submission_url, "Provide a Link") %>
+  </div> -->
+<% #TODO: if/else controller action %>
+
+  
+    <div class="input-field">
+      <%= f.label :file %><br>
+      <%= f.file_field :file, class: :"input[type='button']"  %>
+    </div>
+  
+
+ 
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: :"waves-effect waves-light btn"  %>
   </div>
 <% end %>

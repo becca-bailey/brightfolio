@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
+# ruby '2.0.0'
+# gem 'rails_12factor'
+
 gem 'materialize-sass'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'fog'
 gem 'packery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

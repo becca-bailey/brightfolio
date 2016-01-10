@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+
+    :bucket => ENV['brightfolio'],
+    :access_key_id => ENV['AKIAJYXDRNRLK5XX7VUA'],
+    :secret_access_key => ENV['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']
+   }
+  }
 end

@@ -1,9 +1,5 @@
 class AddFileToElements < ActiveRecord::Migration
-  def self.up
+  def change
     add_attachment :elements, :file
-  end
-
-  def self.down
-    remove_attachment :elements, :file
   end
 end

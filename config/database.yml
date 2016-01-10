@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: brightfolio-new_production
-  username: brightfolio-new
-  password: <%= ENV['BRIGHTFOLIO-NEW_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: brightfolio-new_production
+#   username: brightfolio-new
+#   password: <%= ENV['BRIGHTFOLIO-NEW_DATABASE_PASSWORD'] %>

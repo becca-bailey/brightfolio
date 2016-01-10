@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  $("#sidebar form").on("submit", function(event) {
-    event.preventDefault();
-    var id = $("#id").val();
-    var data = $(this).serialize();
-    post(id, data);
-  });
+  // $("#sidebar form").on("submit", function(event) {
+  //   event.preventDefault();
+  //   var id = $("#id").val();
+  //   var data = $(this).serialize();
+  //   post(id, data);
+  // });
   $(".element").on("dblclick", function() {
     var elm_id = $(this).attr("id");
     console.log($(this).attr("href"));

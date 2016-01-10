@@ -2,16 +2,18 @@
 <html>
 <head>
   <title>Brightfolio</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div>
+<div class="welcome">
   <% if current_user %>
     Welcome <strong><%= current_user.first_name %></strong>!
-    <%= link_to "Sign out", logout_path, id: "sign_out" %>
+    <%= link_to "Sign out", logout_path, method: "delete" %>
+
   <% else %>
     <%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
@@ -19,19 +21,29 @@
 </div> 
 
 <header>
-    <nav class="teal lighten-1" role="navigation">
-      <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo"><h4>BrightFolio</h4></a>
-        <ul class="right hide-on-med-and-down">
-          <li><%= link_to 'Folio', folios_path %></li>
+    <nav class="menu teal" role="navigation">
+    <ul id="dropdown1" class="dropdown-content">
+      <li><%= link_to 'Folio', folios_path %></li>
+      <li class="divider"></li>
+      <% if current_user %>
+        
+      <% else %>
+        <li><%= link_to "Login", login_path, id: "login" %></li>
+        <li><%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %></li>
+        <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+      <% end %>
+    </ul>
+    <nav>
+      <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo"><%= image_tag("logo.png") %></a>
+        <ul class="right">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">list</i></a></li>
+          <!-- <li><%= image_tag("logo.png") %></li> -->
         </ul>
-      </div>
-        <ul id="nav-mobile" class="side-nav">
-          <li><%= link_to 'Folio', folios_path %></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </nav>
   </header> 
+
+
 
 <%= yield %>
 

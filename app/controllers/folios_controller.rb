@@ -11,6 +11,7 @@ class FoliosController < ApplicationController
   # GET /folios/1.json
   def show
     @element = Element.new
+    @elements = @folio.elements.order("created_at DESC")
   end
 
   # GET /folios/new

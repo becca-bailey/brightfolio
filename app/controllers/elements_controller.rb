@@ -10,6 +10,7 @@ class ElementsController < ApplicationController
   end
 
   def edit
+    @element = Element.find_or_initialize_by(id: params[:id])
   end
 
   def show

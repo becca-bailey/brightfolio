@@ -1,4 +1,4 @@
-<div class="container">
+<div class="folio">
   <p id="notice"><%= notice %></p>
 
   <div class="row">
@@ -13,6 +13,7 @@
 
         <li>
           <div class="collapsible-header ch2 no-bottom valign-wrapper"><i class="material-icons drop">arrow_drop_down</i><p><%= folio.description %></p></div>
+          <div class="collapsible-body center"><%= link_to 'Show', folio %></div>
           <div class="collapsible-body center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
           <div class="collapsible-body center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         </li>
@@ -32,10 +33,12 @@
       </ul>
     </div>
   </div>
+  </div>
 
   <% #TODO render 'elements/show', element: element%>
   <div class="col s12 m4" id="sidebar">
     <%= render 'users/show' %>
   </div>
   
+</div>
 </div>

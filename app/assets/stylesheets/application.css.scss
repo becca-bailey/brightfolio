@@ -29,7 +29,13 @@ $primary-color: color("black", "lighten-2") !default;
  */
 
 body {
-background-color: #4D4D4D;
+background-color: #ffffff;
+}
+
+.folio {
+  background-color: #4D4D4D;
+  height: 100%;
+  padding: 2% 1%;
 }
 
 .icon-block {
@@ -170,6 +176,8 @@ h1.header {
   margin-top: -3%;
   margin-left: 5%;
   border: 1pt solid #18A89D;
+  margin-bottom: -3%;
+
 }
 
 .main {

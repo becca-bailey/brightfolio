@@ -5,13 +5,20 @@ function Element(data) {
   this.citation = data.citation;
 }
 
-Element.prototype.post = function(id, data) {
-    $.ajax({
-    dataType: "json",
-    method: "POST",
-    url: "/folios/" + id + "/elements",
-    data: data
-  }).done(function(responseData) {
-    var element = new Element(responseData);
+Element.prototype.showDeleteButton = function() {
+  $(this).on("dblclick", function() {
+    $(".delete").show();
   });
 };
+
+
+// Element.prototype.post = function(id, data) {
+//     $.ajax({
+//     dataType: "json",
+//     method: "POST",
+//     url: "/folios/" + id + "/elements",
+//     data: data
+//   }).done(function(responseData) {
+//     var element = new Element(responseData);
+//   });
+// };

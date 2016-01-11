@@ -21,6 +21,8 @@ function submitForm() {
 }
 
 function post(id, data) {
+  console.log("bar");
+  // var folioView = new FolioView();
   $.ajax({
     dataType: "json",
     method: "POST",

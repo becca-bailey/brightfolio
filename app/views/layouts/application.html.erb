@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Brightfolio</title>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -18,7 +18,7 @@
     <%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
-</div> 
+</div>
 
 <header>
     <nav class="menu teal" role="navigation">
@@ -26,7 +26,7 @@
       <li><%= link_to 'Folio', folios_path %></li>
       <li class="divider"></li>
       <% if current_user %>
-        
+
       <% else %>
         <li><%= link_to "Login", login_path, id: "login" %></li>
         <li><%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %></li>
@@ -41,7 +41,7 @@
         </ul>
       </div>
     </nav>
-  </header> 
+  </header>
 
 
 

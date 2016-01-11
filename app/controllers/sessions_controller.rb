@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
     session[:user_id] = @user.id
-    redirect_to @user
+    redirect_to folios_path
     else
       flash[:danger] = "Login information not found"
       render 'new'

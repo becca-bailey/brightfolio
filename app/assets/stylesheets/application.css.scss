@@ -28,11 +28,16 @@ $primary-color: color("black", "lighten-2") !default;
  * Made By MaterializeCSS.com
  */
 
+body {
+background-color: #4D4D4D;
+}
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+  vertical-align: middle;
 }
 
 .clearfix::before, .clearfix::after {
@@ -47,6 +52,9 @@ $primary-color: color("black", "lighten-2") !default;
   padding: 1%;
   width: 95%;
   height: 100%;
+  background-color: #F2F2F2;
+  border-radius: 30px;
+  margin-top: 30px;
 }
 
 #container:after {
@@ -61,7 +69,16 @@ $primary-color: color("black", "lighten-2") !default;
     width: 100%;
 }
 
-
+.responsive-logo {
+    max-width: 80%;
+    height: auto;
+    width: 60%;
+    min-width: 300px;
+}
+ .elements {
+  /*display: relative;*/
+  /*margin-top: 30px;*/
+ }
 
 /* =Top Bar
 -------------------------------------------------------------- */
@@ -89,7 +106,7 @@ $primary-color: color("black", "lighten-2") !default;
 	width: 20%;
 }
 
-
+/*errors*/
 #notice  {
   color: #43DFFF;
   /*background-color: #C6FFF7;*/
@@ -103,10 +120,9 @@ $primary-color: color("black", "lighten-2") !default;
 
 }
 
-
-#notice {
+/*#notice {
   color: green;
-}
+}*/
 
 .field_with_errors {
   padding: 2px;
@@ -123,9 +139,8 @@ $primary-color: color("black", "lighten-2") !default;
   background-color: #f0f0f0;}
 
 
-i.material-icons {
-  padding: 1px;
-}
+
+
 
 .primary-img {
 	width: 100%;
@@ -140,6 +155,21 @@ background-color: #000000;
 color: teal;
 text-align: center;
 padding: 3%;
+}
+
+h1.header {
+  background-color: #000;
+  color: #F9B029;
+  padding: 2%;
+  min-width: 300px;
+  max-width: 40%;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 3em;
+  position: inherit;
+  margin-top: -3%;
+  margin-left: 5%;
+  border: 1pt solid #18A89D;
 }
 
 .main {
@@ -177,6 +207,11 @@ padding: 3%;
   
 }
 
+.divider {
+  background-color: #000;
+}
+
+
 textarea#element_description {
   border: none;
   background-color: #CAFEFB;
@@ -205,7 +240,10 @@ nav {
   }
 }
 
-
+.brand-logo {
+  width: 60%;
+  min-width: 300px;
+}
 
 .waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
   border: 0;
@@ -244,6 +282,71 @@ nav {
    }
 .input-field input[type='button'] {
   background-color: teal;
+}
+
+
+/*.brand-logo {
+  left: 50%; 
+  transform: translateX(-50%);
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+  width: 60%;
+  min-width: 300px;
+}*/
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 16px;
+    background-color: #244;
+    color: #26a69a;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+    border-bottom: none;
+    width: auto !important;
+}
+
+.drop {
+  padding: 0 35 0 0px;
+  border-right: 1pt dotted #4D4D4D;
+}
+
+.collapsible-header {
+  margin: 0;
+  line-height: 14pt;
+  /*padding: 0;*/}
+
+.ch2 {
+  margin: 0;
+  line-height: 14pt;
+  display: flex;
+}
+.ch2 p {
+padding: 0 10px;
+}
+.collapsible-header.no-bottom.valign-wrapper {
+  padding: 0;
+}
+
+.collapsible-header i {
+    width: 2rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    /* display: block; */
+     float: none; 
+    /* text-align: center; */
+    /* margin-right: 1rem; */
+}
+.collapsible-body p {
+  margin: 0;
+  /*padding: 2rem;*/
+}
+
+ul.collapsible {
+  /*background-image: url(primary_img); */
+  background-color: none;
 }
 
   @media all and (max-width: 600px) {

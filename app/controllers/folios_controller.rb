@@ -12,7 +12,7 @@ class FoliosController < ApplicationController
   def show
     @element = Element.new
     @elements = @folio.elements.order("created_at DESC")
-    @folio = Folio.find_by(params[:folio_id])
+    @folio = Folio.find(params[:id])
   end
 
   # GET /folios/new

@@ -5,10 +5,11 @@ function ElementView() {
 ElementView.prototype.compile = function(element) {
   var elem = document.createElement("div");
   elem.className = 'element card';
+  var deleteIcon = "<i class='material-icons delete'>close</i>";
   var title = "<p class='title'>" + element.title + "</p>";
   var description = "<p class='description'>" + element.description + "</p>";
   var link = "<a href=" + element.element_link + ">View More</a>";
-  var content = title + description + link;
+  var content = deleteIcon + title + description + link;
   elem.innerHTML = content;
   return elem;
 };

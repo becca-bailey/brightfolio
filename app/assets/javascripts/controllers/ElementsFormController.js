@@ -6,12 +6,15 @@ $(document).ready(function() {
 function submitForm() {
   $("#new_element").on("submit", function(event) {
     event.preventDefault();
-    var id = $("#id").val();
+    var folioId = $("#id").val();
+    console.log(folioId);
     var data = $(this).serialize();
+    console.log(this);
     elm_id = "#" + id;
+    console.log(elm_id);
+    console.log($(elm_id).hasClass("editing"));
     if ($(elm_id).hasClass("editing")) {
       console.log("true");
-      edit(id);
       update(id);
     } else {
       post(id, data);
@@ -28,7 +31,7 @@ function post(id, data) {
     data: data
   }).done(function(responseData) {
     var element = new Element(responseData);
-    var elementView = new ElementView();
+    elementView = new ElementView();
     var html = elementView.compile(element);
     elementView.render(html);
     folioView.toggleSidebar();

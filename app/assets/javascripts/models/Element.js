@@ -7,6 +7,9 @@ function Element(data) {
 
 Element.prototype.showDeleteButton = function() {
   $(this).on("dblclick", function() {
+    if ($(".element").hasClass("editing")) {
+      $(".delete").hide();
+    }
     $(".delete").show();
   });
 };

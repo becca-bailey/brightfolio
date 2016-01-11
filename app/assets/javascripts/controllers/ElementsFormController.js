@@ -8,23 +8,15 @@ function submitForm() {
     event.preventDefault();
     var id = $("#id").val();
     var data = $(this).serialize();
-    if ($(this).hasClass("edit-element")) {
+    elm_id = "#" + id;
+    if ($(elm_id).hasClass("editing")) {
+      console.log("true");
       edit(id);
       update(id);
     } else {
       post(id, data);
     }
-  });
-}
-
-function clickToEdit() {
-  $(".element").on("dblclick", function() {
-    if (!$("#sidebar form").hasClass("edit-element")) {
-      $("#sidebar form").addClass("edit-element");
-    }
-    var elm_id = $(this).attr("id");
-    edit(elm_id);
-    update(elm_id);
+    // ^this code doesn't work yet.  Why?
   });
 }
 
@@ -39,34 +31,6 @@ function post(id, data) {
     var elementView = new ElementView();
     var html = elementView.compile(element);
     elementView.render(html);
-  });
-}
-
-function edit(elm_id) {
-  $.ajax({
-    dataType: "json",
-    method: "GET",
-    url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id
-  }).done(function(responseData) {
-    var editView = new EditView();
-    editView.getFields(responseData);
-  });
-}
-
-function update(elm_id) {
-  $("#new_element").on("change", function() {
-    var data = $(this).serialize();
-    $.ajax({
-      dataType: "json",
-      method: "PUT",
-      url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id,
-      data: data
-    }).done(function(responseData) {
-      console.log(responseData, elm_id);
-      var updatedView = new ElementView();
-      updatedView.update(responseData, elm_id);
-      $("#new_element").trigger("reset");
-      $("#sidebar form").removeClass("edit-element");
-    });
+    folioView.toggleSidebar();
   });
 }

@@ -18,7 +18,6 @@ class ElementsController < ApplicationController
 
   def create
 
-    p params
     @element = Element.new(element_params)
     @folio = Folio.find(params[:folio_id])
     respond_to do |format|

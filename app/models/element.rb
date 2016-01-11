@@ -1,7 +1,7 @@
 class Element < ActiveRecord::Base
   belongs_to :folio
   validate :any_present?
-  has_attached_file :image,: storage => :s3, :s3_credentials => S3_CREDENTIALS,
+  has_attached_file :image,
    styles: {
      thumb: '100x100>',
      square: '200x200#'

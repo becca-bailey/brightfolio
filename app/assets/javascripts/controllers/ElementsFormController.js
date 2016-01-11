@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  submitForm();
-  clickToEdit();
+  // submitForm();
+  // clickToEdit();
 });
 
 function submitForm() {

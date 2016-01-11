@@ -6,12 +6,15 @@ $(document).ready(function() {
 function submitForm() {
   $("#new_element").on("submit", function(event) {
     event.preventDefault();
-    var id = $("#id").val();
+    var folioId = $("#id").val();
+    console.log(folioId);
     var data = $(this).serialize();
+    console.log(this);
     elm_id = "#" + id;
+    console.log(elm_id);
+    console.log($(elm_id).hasClass("editing"));
     if ($(elm_id).hasClass("editing")) {
       console.log("true");
-      edit(id);
       update(id);
     } else {
       post(id, data);
@@ -21,8 +24,7 @@ function submitForm() {
 }
 
 function post(id, data) {
-  console.log("bar");
-  // var folioView = new FolioView();
+
   $.ajax({
     dataType: "json",
     method: "POST",

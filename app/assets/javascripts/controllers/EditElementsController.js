@@ -4,12 +4,14 @@ $(document).ready(function() {
 
 function clickToEdit() {
   $(".element").on("dblclick", function() {
+    // $(this).addClass("w2");
     var folioView = new FolioView();
     if ($("#container").hasClass("m12")) {
       folioView.toggleSidebar();
     }
     $(this).addClass("editing");
     var elm_id = $(this).attr("id");
+    $("#" + elm_id + ">.delete").show();
     edit(elm_id);
     update(elm_id);
   });

@@ -7,3 +7,14 @@
   left: 0;
   right: 0;
 }
+
+.delete {
+  color: rgba(255,255,255,.7);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}

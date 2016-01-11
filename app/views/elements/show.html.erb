@@ -1,5 +1,6 @@
 <div class="element card">
-  <% if element.file.file? %>
+
+  <% if element.image.file? %>
     <div class="card-image"><%= image_tag element.image.url %></div>
   <% end %>
   <div class="title"><%= element.title %></div>

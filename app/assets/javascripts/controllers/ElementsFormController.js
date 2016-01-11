@@ -7,28 +7,28 @@ function submitForm() {
   $("#new_element").on("submit", function(event) {
     event.preventDefault();
     var folioId = $("#id").val();
-    console.log(folioId);
+
     var data = $(this).serialize();
-    console.log(this);
-    elm_id = "#" + id;
-    console.log(elm_id);
-    console.log($(elm_id).hasClass("editing"));
-    if ($(elm_id).hasClass("editing")) {
-      console.log("true");
-      update(id);
-    } else {
-      post(id, data);
-    }
+
+    // elm_id = "#" + ;
+
+
+    // if ($(elm_id).hasClass("editing")) {
+    //   console.log("true");
+    //   update(id);
+    // } else {
+     post(folioId, data);
+    // }
     // ^this code doesn't work yet.  Why?
   });
 }
 
-function post(id, data) {
+function post(folioId, data) {
 
   $.ajax({
     dataType: "json",
     method: "POST",
-    url: "/folios/" + id + "/elements",
+    url: "/folios/" + folioId + "/elements",
     data: data
   }).done(function(responseData) {
     var element = new Element(responseData);

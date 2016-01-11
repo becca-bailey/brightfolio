@@ -7,7 +7,7 @@
     <% @folios.each do |folio| %>
       <ul class="collapsible" data-collapsible="expandable">
         <li>
-          <div class="collapsible-header active title"><h2 class="center"><%= folio.title %></h2></div>
+          <div class="collapsible-header active title"><h2 class="center"><%= link_to folio.title, folio %></h2></div>
           <!-- <div class="responsive-img"><%= image_tag("primary-img", class: "responsive-img") %></div> -->
         </li>
 
@@ -39,6 +39,6 @@
   <div class="col s12 m4" id="sidebar">
     <%= render 'users/show' %>
   </div>
-  
+
 </div>
 </div>

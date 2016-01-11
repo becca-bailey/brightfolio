@@ -12,6 +12,7 @@ class FoliosController < ApplicationController
   def show
     @element = Element.new
     @elements = @folio.elements.order("created_at DESC")
+    @folio = Folio.find(params[:id])
   end
 
   # GET /folios/new
@@ -26,6 +27,7 @@ class FoliosController < ApplicationController
   # POST /folios
   # POST /folios.json
   def create
+
     @folio = Folio.new(folio_params)
 
     respond_to do |format|

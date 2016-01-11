@@ -17,10 +17,6 @@ function clickToEdit() {
   });
 }
 
-// function clickToDelete(elm_id) {
-//   $("#" + elm_id + ">.delete").on("click", deleteElement(elm_id));
-// }
-
 function edit(elm_id) {
   $.ajax({
     dataType: "json",
@@ -31,16 +27,6 @@ function edit(elm_id) {
     editView.getFields(responseData);
   });
 }
-
-// function deleteElement(elm_id) {
-//   $.ajax({
-//     method: "DELETE",
-//     url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id
-//   }).done(function(responseData) {
-//     var elementView = new ElementView();
-//     elementView.removeElement(elm_id);
-//   });
-// }
 
 function update(elm_id) {
   $("#new_element").on("change", function() {

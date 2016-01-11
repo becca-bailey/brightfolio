@@ -28,6 +28,14 @@ $primary-color: color("black", "lighten-2") !default;
  * Made By MaterializeCSS.com
  */
 
+ .clearfix::before, .clearfix::after {
+  content: ' ';
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+/*main containers*/
 body {
 background-color: #ffffff;
 }
@@ -37,21 +45,6 @@ background-color: #ffffff;
   height: 100%;
   padding: 2% 1%;
 }
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
-  vertical-align: middle;
-}
-
-.clearfix::before, .clearfix::after {
-  content: ' ';
-  display: table; }
-
-.clearfix::after {
-  clear: both; }
 
 .container {
   margin: 0 auto;
@@ -68,7 +61,18 @@ background-color: #ffffff;
   display: block;
   clear: both;
 }
-/* LAYOUT CSS */
+
+/*icons*/
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+  vertical-align: middle;
+}
+
+
+/* Images */
 .responsive-img {
     max-width: 100%;
     height: auto;
@@ -77,9 +81,9 @@ background-color: #ffffff;
 
 .responsive-logo {
     max-width: 80%;
-    height: auto;
-    width: 60%;
-    min-width: 300px;
+    max-height: 60px;
+    /*width: 60%;*/
+    min-width: 200px;
 }
  .elements {
   /*display: relative;*/
@@ -212,7 +216,7 @@ h1.header {
 }
 
 .file_input {
-  
+
 }
 
 .divider {
@@ -239,7 +243,7 @@ nav {
   height: $navbar-height-mobile;
   line-height: $navbar-height-mobile;
 
-  a { color: $navbar-font-color; }
+  /*a { color: $navbar-font-color; }*/
 
   i.material-icons {
     display: block;
@@ -294,7 +298,7 @@ nav {
 
 
 /*.brand-logo {
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
   position: absolute;
   color: #fff;
@@ -314,6 +318,19 @@ nav {
     padding: 14px 16px;
     border-bottom: none;
     width: auto !important;
+}
+
+.nav ul {
+    background-color: none;
+    transition: none !important;
+/*    transition-property: none;
+    transition-duration: 0.3s;
+    transition-timing-function: initial;
+    transition-delay: initial;*/
+}
+nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    /* height: 64px; */
+    /*line-height: 64px;*/
 }
 
 .drop {
@@ -343,7 +360,7 @@ padding: 0 10px;
     font-size: 1.6rem;
     line-height: 3rem;
     /* display: block; */
-     float: none; 
+     float: none;
     /* text-align: center; */
     /* margin-right: 1rem; */
 }

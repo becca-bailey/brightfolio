@@ -2,30 +2,29 @@
   <p id="notice"><%= notice %></p>
 
   <div class="row">
-    <div class="col s12 m4 l6">
+    <div class="col s12 m6">
+    <div class="folio_card">
     <% @folios.each do |folio| %>
       <ul class="collapsible" data-collapsible="expandable">
         <li>
-          <div class="collapsible-header active title"><h2><%= folio.title %></h2></div>
-          <div class="responsive-img"><%= image_tag("primary-img", class: "responsive-img") %></div>
+          <div class="collapsible-header active title"><h2 class="center"><%= folio.title %></h2></div>
+          <!-- <div class="responsive-img"><%= image_tag("primary-img", class: "responsive-img") %></div> -->
         </li>
 
         <li>
-          <div class="collapsible-header active no-bottom"><h4>Description<i class="fa fa-caret-down fa-lg center"></i></h4></div>
-          <div class="collapsible-body center"><p><%= folio.description %></p></div>
+          <div class="collapsible-header ch2 no-bottom valign-wrapper"><i class="material-icons drop">arrow_drop_down</i><p><%= folio.description %></p></div>
+          <div class="collapsible-body center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
+          <div class="collapsible-body center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         </li>
 
-        <li>
-          <div class="collapsible-header center"><%= link_to 'Show', folio %></div>
-          <div class="collapsible-header center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
-          <div class="collapsible-header center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        </li>
+
       </ul>
     <% end %>
     </div>
-
-
-    <div class="col s12 m4 l6">
+  </div>
+</div>
+  <div class="row">
+    <div class="col s12 m6">
       <ul class="collapsible" data-collapsible="expandable">
         <li>
           <div class="collapsible-header center active no-bottom"><%= link_to 'New Folio', new_folio_path %><i class="fa fa-plus fa-lg center"></i></div>
@@ -33,4 +32,10 @@
       </ul>
     </div>
   </div>
+
+  <% #TODO render 'elements/show', element: element%>
+  <div class="col s12 m4" id="sidebar">
+    <%= render 'users/show' %>
+  </div>
+  
 </div>

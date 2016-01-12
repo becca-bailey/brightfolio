@@ -12,6 +12,10 @@ function clickToDelete() {
     }).done(function(responseData) {
       elementView = new ElementView();
       elementView.removeElement(elm_id);
+      revertFormMethod();
+      $("#new_element").trigger("reset");
+      var folioView = new FolioView();
+      folioView.toggleSidebar();
     });
   });
 }

@@ -1,9 +1,15 @@
 <div class="element card">
 
   <% if element.image%>
-    <div class="card-image"><%= image_tag element.image.url(:medium) %></div>
+    <div class="card-image"><%= link_to element.image.url(:medium) %></div>
+
   <%elsif element.document%>
     <div class="card-image"><%= image_tag element.document.url(:medium) %></div>
+
+  <% elsif element.audio %>
+    <div class="card-image"><%= image_tag element.audio.url(:medium) %></div>
+
+    <div class="card-url"><%= link_to @element.audio.url %></div>
   <% end %>
   <div class="title"><%= element.title %></div>
 

@@ -1,14 +1,53 @@
 <div class="element card" id=<%= element.id %>>
   <i class="material-icons delete">close</i>
   <i class="material-icons done">done</i>
-  <% if element.image.file? %>
-    <div class="card-image"><%= image_tag element.image.url %>
-        <%= image_tag @element.image.url(:thumb)%>
-    </div>
-  <% end %>
+
+    <% if element.image.file? %>
+      <div class="card-image"><%= link_to element.image.url do %>
+          <%= image_tag element.image.url %>
+        <% end %></div>
+
+      <% if element.element_link.empty?%>
+      <% else %>
+        <%= link_to element.element_link, class: 'right' do %>
+         <i class="material-icons">link</i>
+         <a href="<%=element.element_link%>" target="_blank"></a>
+        <% end %>
+      <% end %>
+
+    <%elsif element.document.file? %>
+       <div class="card-image"><%= link_to element.document.url do %>
+          <%= image_tag ("documentlogo.png") %>
+        <% end %></div>
+        <% if element.element_link.empty?%>
+        <% else %>
+        <%= link_to element.element_link, class: 'right' do %>
+          <i class="material-icons">link</i>
+          <a href="<%=element.element_link%>" target="_blank"></a>
+
+        <% end %>
+
+    <%elsif element.audio.file? %>
+       <div class="card-image"><%= link_to element.audio.url do %>
+          <%= image_tag ("musiclogo.png") %>
+        <% end %></div>
+
+        <% if element.element_link.empty?%>
+        <% else %>
+        <%= link_to element.element_link, class: 'right' do %>
+          <i class="material-icons">link</i>
+          <a href="<%=element.element_link%>" target="_blank"></a>
+        <% end %>
+        <% end %>
+    <% end %>
+
+  <!-- elsif link part -->
+
   <div class="title"><%= element.title %></div>
   <div class="description"><%= element.description %></div>
-  <% if element.element_link %>
-    <%= link_to "View More", element.element_link %>
-  <% end %>
+
+
+
+
+
 </div>

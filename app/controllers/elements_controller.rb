@@ -19,6 +19,7 @@ class ElementsController < ApplicationController
   def create
 
     @element = Element.new(element_params)
+
     @folio = Folio.find(params[:folio_id])
     respond_to do |format|
       if @element.save
@@ -59,6 +60,6 @@ class ElementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def element_params
-      params.require(:element).permit(:folio_id, :title, :description, :citation, :image, :image_content_type, :element_link)
+      params.require(:element).permit(:folio_id, :title, :description, :citation, :image, :document, :image_content_type, :document_content_type, :audio, :audio_content_type, :element_link)
     end
 end

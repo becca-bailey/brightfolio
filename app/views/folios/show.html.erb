@@ -5,13 +5,16 @@
   REGISTRY = { folio_id: "<%= @folio.id %>" }
 </script>
 <p id="notice"><%= notice %></p>
+
 <button id="add-element" type="button">Add Element</button>
 <div class="row">
+
   <div class="col s12 m12 elements" id="container">
     <% @elements.each do |element| %>
       <%= render "elements/element", element: element %>
     <% end %>
   </div>
+
   <div class="col s12 m3" id="sidebar">
     <%= render "elements/form"  %>
     <button id='delete'>Delete Element</button>

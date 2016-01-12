@@ -18,6 +18,7 @@ class ElementsController < ApplicationController
   end
 
   def create
+
     @element = Element.new(element_params)
     @folio = Folio.find(params[:folio_id])
     respond_to do |format|
@@ -25,7 +26,7 @@ class ElementsController < ApplicationController
         format.html { redirect_to @folio, notice: 'Element was successfully created.' }
         format.json { render :show, status: :created, location: @folio }
       else
-        format.html { render :new }
+        format.html { render :"folios/show" }
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end
@@ -59,6 +60,6 @@ class ElementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def element_params
-      params.require(:element).permit(:folio_id, :title, :description, :citation, :file, :element_link)
+      params.require(:element).permit(:folio_id, :title, :description, :citation, :image, :image_content_type, :element_link)
     end
 end

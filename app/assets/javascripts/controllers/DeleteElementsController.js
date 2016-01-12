@@ -10,8 +10,12 @@ function clickToDelete() {
       method: "DELETE",
       url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id
     }).done(function(responseData) {
-      var elementView = new ElementView();
+      elementView = new ElementView();
       elementView.removeElement(elm_id);
+      revertFormMethod();
+      $("#new_element").trigger("reset");
+      var folioView = new FolioView();
+      folioView.toggleSidebar();
     });
   });
 }

@@ -8,3 +8,9 @@ FolioView.prototype.toggleSidebar = function() {
   $("#sidebar").toggle();
   $container.packery();
 };
+
+FolioView.prototype.showSidebar = function() {
+  if ($("#container").hasClass("m12")) {
+    folioView.toggleSidebar();
+  }
+}

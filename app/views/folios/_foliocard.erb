@@ -1,0 +1,12 @@
+    <% @folios.each do |folio| %>
+    <div class="folio_card">
+      <ul class="collapsible" data-collapsible="expandable">
+        <li><div class="collapsible-header active title"><h2 class="center"><%= link_to folio.title, folio %></h2></div></li>
+        <li>
+          <div class="collapsible-header ch2 no-bottom valign-wrapper"><i class="material-icons drop">arrow_drop_down</i><p><%= folio.description %></p></div>
+          <div class="collapsible-body center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
+          <div class="collapsible-body center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </li>
+      </ul>
+    </div>
+    <% end %>

@@ -4,27 +4,20 @@ $(document).ready(function() {
 });
 
 function submitForm() {
-  $("#new_element").on("submit", function(event) {
+  $("#sidebar").on("submit", "#new_element", function(event) {
     event.preventDefault();
     var folioId = $("#id").val();
-
     var data = $(this).serialize();
-
-    // elm_id = "#" + ;
-
-
-    // if ($(elm_id).hasClass("editing")) {
-    //   console.log("true");
-    //   update(id);
-    // } else {
-     post(folioId, data);
-    // }
-    // ^this code doesn't work yet.  Why?
+    post(folioId, data);
+  });
+  $("#sidebar").on("submit", "#edit_element", function(event) {
+    event.preventDefault();
+    var elm_id = $(".editing").attr("id");
+    update(elm_id);
   });
 }
 
 function post(folioId, data) {
-
   $.ajax({
     dataType: "json",
     method: "POST",
@@ -32,7 +25,7 @@ function post(folioId, data) {
     data: data
   }).done(function(responseData) {
     var element = new Element(responseData);
-    var elementView = new ElementView();
+    elementView = new ElementView();
     var html = elementView.compile(element);
     elementView.render(html);
     folioView.toggleSidebar();

@@ -1,6 +1,6 @@
 class FoliosController < ApplicationController
   before_action :set_folio, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /folios
   # GET /folios.json
   def index

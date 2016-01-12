@@ -3,13 +3,18 @@ $(document).ready(function() {
 });
 
 function clickToEdit() {
-  $(".element").on("dblclick", function() {
+  $("#container").on("dblclick", ".element", function() {
+    $(".delete").hide();
     var folioView = new FolioView();
+    if ($(".element").hasClass("editing")) {
+      $(".element").removeClass("editing");
+    }
+    $(this).addClass("editing");
     if ($("#container").hasClass("m12")) {
       folioView.toggleSidebar();
     }
-    $(this).addClass("editing");
     var elm_id = $(this).attr("id");
+    $("#" + elm_id + ">.delete").show();
     edit(elm_id);
     update(elm_id);
   });

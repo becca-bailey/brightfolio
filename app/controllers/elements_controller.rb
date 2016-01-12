@@ -1,5 +1,6 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   def index
     @elements = Element.all

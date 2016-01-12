@@ -1,23 +1,23 @@
 $(document).ready(function() {
   var containerView = new ContainerView();
   var $container = $("#container").packery();
-  containerView.packery(".element");
-  containerView.modularDraggable(".element");
+  containerView.packery(".modular");
+  containerView.modularDraggable(".modular");
   packeryToggle();
 });
 
 function packeryToggle() {
   var $container = $('#container').packery();
-  var isActive = true;
+  var isActive = false;
 
   $('#packery-toggle').on('click', function() {
+    // $(".element").toggleClass(".modular").toggleClass(".draggable");
     if ( isActive ) {
-      $container.packery('destroy');
-      $(this).removeClass("teal lighten-2");
+      $(this).css("color", "teal");
+      containerView.draggable(".draggable");
     } else {
       $container.packery();
-      $(this).addClass("teal lighten-2");
-      containerView.draggable(".element");
+      $(this).css("color", "black");
     }
     isActive = !isActive;
   });

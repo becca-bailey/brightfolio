@@ -1,9 +1,12 @@
 <div class="element card">
 
-  <% if element.image.file? %>
-    <div class="card-image"><%= image_tag element.image.url %></div>
+  <% if element.image%>
+    <div class="card-image"><%= image_tag @element.image.url(:medium) %></div>
+  <%elsif element.document%>
+    <div class="card-image"><%= image_tag @element.document.url(:medium) %></div>
   <% end %>
   <div class="title"><%= element.title %></div>
+
   <div class="description"><%= element.description %></div>
   <% if element.element_link %>
     <%= link_to "View More", element.element_link %>

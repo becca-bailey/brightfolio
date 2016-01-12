@@ -38,8 +38,6 @@ group :development, :test do
   gem 'faker'
   gem 'dotenv-rails'
 
-  gem "omniauth", "~> 1.1.1"
-  gem "omniauth-facebook", "~> 1.4.1"
 end
 
 group :development do
@@ -47,8 +45,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 
-  gem "omniauth", "~> 1.1.1"
-  gem "omniauth-facebook", "~> 1.4.1"
 end
 
 

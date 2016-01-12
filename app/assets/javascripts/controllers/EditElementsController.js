@@ -10,6 +10,7 @@ function clickToEdit() {
       $(".element").removeClass("editing");
     }
     $(this).addClass("editing");
+    console.log(this);
     if ($("#container").hasClass("m12")) {
       folioView.toggleSidebar();
     }

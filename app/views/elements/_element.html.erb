@@ -9,6 +9,8 @@
   <div class="title"><%= element.title %></div>
   <div class="description"><%= element.description %></div>
   <% if element.element_link %>
-    <%= link_to "View More", element.element_link %>
+    <%= link_to element.element_link, class: 'right' do %>
+    <i class="material-icons">link</i>
+  <% end %>
   <% end %>
 </div>

@@ -17,17 +17,21 @@
 @import "materialize/components/color";
 $primary-color: color("black", "lighten-2") !default;
 @import 'materialize';
-
 @import "materialize/extras/nouislider";
 
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+.clearfix::before, .clearfix::after {
+  content: ' ';
+  display: table;
+}
 
+.clearfix::after {
+  clear: both; }
+
+.inline {
+  display: inline;
+}
+
+/*main containers*/
 body {
 background-color: #ffffff;
 }
@@ -35,23 +39,8 @@ background-color: #ffffff;
 .folio {
   background-color: #4D4D4D;
   height: 100%;
-  padding: 2% 1%;
+  padding: 2% .5%;
 }
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
-  vertical-align: middle;
-}
-
-.clearfix::before, .clearfix::after {
-  content: ' ';
-  display: table; }
-
-.clearfix::after {
-  clear: both; }
 
 .container {
   margin: 0 auto;
@@ -68,7 +57,34 @@ background-color: #ffffff;
   display: block;
   clear: both;
 }
-/* LAYOUT CSS */
+
+.elements {
+  /*display: relative;*/
+  /*margin-top: 30px;*/
+ }
+
+.title {
+background-color: #000000;
+color: teal;
+text-align: center;
+padding: 3%;
+line-height: 16px;
+}
+
+.description {
+  padding: 3%;
+}
+
+/*icons*/
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+  vertical-align: middle;
+}
+
+/* Images */
 .responsive-img {
     max-width: 100%;
     height: auto;
@@ -77,14 +93,14 @@ background-color: #ffffff;
 
 .responsive-logo {
     max-width: 80%;
-    height: auto;
-    width: 60%;
-    min-width: 300px;
+    max-height: 60px;
+    /*width: 60%;*/
+    min-width: 200px;
 }
- .elements {
-  /*display: relative;*/
-  /*margin-top: 30px;*/
- }
+
+.primary-img {
+  width: 100%;
+}
 
 /* =Top Bar
 -------------------------------------------------------------- */
@@ -104,14 +120,6 @@ background-color: #ffffff;
   letter-spacing: 10%;
 }
 
-/*#top-bar a:hover {
-  background-color: #a91c44;
-}*/
-
-.btn-large {
-	width: 20%;
-}
-
 /*errors*/
 #notice  {
   color: #43DFFF;
@@ -125,10 +133,6 @@ background-color: #ffffff;
   padding: 20px;
 
 }
-
-/*#notice {
-  color: green;
-}*/
 
 .field_with_errors {
   padding: 2px;
@@ -144,25 +148,7 @@ background-color: #ffffff;
   margin-bottom: 20px;
   background-color: #f0f0f0;}
 
-
-
-
-
-.primary-img {
-	width: 100%;
-}
-
-.inline {
-  display: inline;
-}
-
-.title {
-background-color: #000000;
-color: teal;
-text-align: center;
-padding: 3%;
-}
-
+/* text */
 h1.header {
   background-color: #000;
   color: #F9B029;
@@ -184,7 +170,6 @@ h1.header {
   /*margin-left: 0;*/
   background-color: #343838;
   border-radius: 30px;
-
 }
 
 .edit {
@@ -207,24 +192,16 @@ h1.header {
 	border-bottom: 0px solid #ddd;
 }
 
-.description {
-  padding: 3%;
-}
-
-.file_input {
-  
-}
-
 .divider {
   background-color: #000;
 }
 
 
-textarea#element_description {
+/*textarea#element_description {
   border: none;
   background-color: #CAFEFB;
-  /*padding: 5px;*/
-}
+  padding: 5px;
+}*/
 /*.main {*/
     /*float: left;*/
     /* clear: both; */
@@ -239,7 +216,7 @@ nav {
   height: $navbar-height-mobile;
   line-height: $navbar-height-mobile;
 
-  a { color: $navbar-font-color; }
+  /*a { color: $navbar-font-color; }*/
 
   i.material-icons {
     display: block;
@@ -248,63 +225,20 @@ nav {
   }
 }
 
-.brand-logo {
-  width: 60%;
-  min-width: 300px;
+.nav ul {
+    background-color: none;
+    transition: none !important;
+/*    transition-property: none;
+    transition-duration: 0.3s;
+    transition-timing-function: initial;
+    transition-delay: initial;*/
+}
+nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    /* height: 64px; */
+    /*line-height: 64px;*/
 }
 
-.waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
-  border: 0;
-  font-style: normal;
-  font-size: inherit;
-  text-transform: inherit;
-  background: none;
-}
-
-  /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
-.input-field input[type='button'] {
-  background-color: teal;
-}
-
-
-/*.brand-logo {
-  left: 50%; 
-  transform: translateX(-50%);
-  position: absolute;
-  color: #fff;
-  display: inline-block;
-  font-size: 2.1rem;
-  padding: 0;
-  width: 60%;
-  min-width: 300px;
-}*/
-
+/*dropdown*/
 .dropdown-content li > a, .dropdown-content li > span {
     font-size: 16px;
     background-color: #244;
@@ -321,6 +255,46 @@ nav {
   border-right: 1pt dotted #4D4D4D;
 }
 
+.waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
+  border: 0;
+  font-style: normal;
+  font-size: inherit;
+  text-transform: inherit;
+  background: none;
+}
+
+/* label color */
+ .input-field label {
+   color: #000;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: #000;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #000;
+ }
+.input-field input[type='button'] {
+  background-color: teal;
+}
+
+/* collapsible */
 .collapsible-header {
   margin: 0;
   line-height: 14pt;
@@ -331,9 +305,11 @@ nav {
   line-height: 14pt;
   display: flex;
 }
+
 .ch2 p {
 padding: 0 10px;
 }
+
 .collapsible-header.no-bottom.valign-wrapper {
   padding: 0;
 }
@@ -343,10 +319,11 @@ padding: 0 10px;
     font-size: 1.6rem;
     line-height: 3rem;
     /* display: block; */
-     float: none; 
+     float: none;
     /* text-align: center; */
     /* margin-right: 1rem; */
 }
+
 .collapsible-body p {
   margin: 0;
   /*padding: 2rem;*/
@@ -357,6 +334,7 @@ ul.collapsible {
   background-color: none;
 }
 
+/* media queries */
   @media all and (max-width: 600px) {
     .main {
       width: 100%;

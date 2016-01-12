@@ -35,3 +35,9 @@ ElementView.prototype.removeElement = function(elm_id) {
   $("#" + elm_id).remove();
   $container.packery();
 };
+
+ElementView.prototype.removeEditClass = function() {
+  if ($(".element").hasClass("editing")) {
+    $(".element").removeClass("editing");
+  }
+}

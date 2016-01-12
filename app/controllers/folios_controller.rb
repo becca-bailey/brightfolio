@@ -10,9 +10,9 @@ class FoliosController < ApplicationController
   # GET /folios/1
   # GET /folios/1.json
   def show
+    @folio = Folio.find(params[:id])
     @element = Element.new
     @elements = @folio.elements.order("created_at DESC")
-    @folio = Folio.find(params[:id])
   end
 
   # GET /folios/new

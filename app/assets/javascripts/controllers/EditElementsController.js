@@ -4,19 +4,15 @@ $(document).ready(function() {
 
 function clickToEdit() {
   $("#container").on("dblclick", ".element", function() {
-    $(".delete").hide();
-    var folioView = new FolioView();
-    if ($(".element").hasClass("editing")) {
-      $(".element").removeClass("editing");
-    }
-    $(this).addClass("editing");
-    if ($("#container").hasClass("m12")) {
-      folioView.toggleSidebar();
-    }
     var elm_id = $(this).attr("id");
+    $(".delete").hide();
+    folioView.showSidebar();
+    var elementView = new ElementView();
+    elementView.removeEditClass();
+    $(this).addClass("editing");
     $("#" + elm_id + ">.delete").show();
     edit(elm_id);
-    update(elm_id);
+    // update(elm_id);
   });
 }
 
@@ -40,7 +36,6 @@ function update(elm_id) {
       url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id,
       data: data
     }).done(function(responseData) {
-      console.log(responseData, elm_id);
       var updatedView = new ElementView();
       updatedView.update(responseData, elm_id);
       $("#new_element").trigger("reset");
@@ -49,4 +44,10 @@ function update(elm_id) {
       folioView.toggleSidebar();
     });
   });
+}
+
+function changeFormMethod(elm_id) {
+  var formAction = "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id;
+  $("#new_element").attr("action", formAction );
+  $("#new_element").prepend("<input type='hidden' name='_method' value='put' />");
 }

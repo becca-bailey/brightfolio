@@ -26,7 +26,7 @@ class ElementsController < ApplicationController
         format.html { redirect_to @folio, notice: 'Element was successfully created.' }
         format.json { render :show, status: :created, location: @folio }
       else
-        format.html { render :new }
+        format.html { render :"folios/show" }
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end

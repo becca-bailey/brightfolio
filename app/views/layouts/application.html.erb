@@ -14,7 +14,7 @@
     Hello, <strong><%= current_user.first_name %></strong>!
     <%= link_to "Sign out", logout_path, method: "delete", class: "right" %>
   <% end %>
-</div> 
+</div>
 
 <header>
     <nav class="menu teal" role="navigation">
@@ -22,7 +22,7 @@
       <li><%= link_to 'Dashboard', folios_path %></li>
       <li class="divider"></li>
       <% if current_user %>
-        
+
       <% else %>
         <li><%= link_to "Login", login_path, id: "login" %></li>
         <li><%= link_to "Sign in with Pinterest", "/auth/pinterest", id: "sign_in" %></li>
@@ -30,14 +30,14 @@
       <% end %>
     </ul>
     <nav>
-      <div class="nav-wrapper">
-      <%= link_to image_tag("logo.png"), {action: :'index', :controller => 'home'}, {:class => 'responsive-logo'} %>
+      <div class="nav-wrapper valign">
+      <%= link_to image_tag("logo.png", :class => 'responsive-logo'), {action: :'index', :controller => 'home'} %>
         <ul class="right">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-constrainwidth="false"><i class="material-icons">list</i></a></li>
         </ul>
       </div>
     </nav>
-  </header> 
+  </header>
 
 
 

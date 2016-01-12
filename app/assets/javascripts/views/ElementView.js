@@ -40,4 +40,14 @@ ElementView.prototype.removeEditClass = function() {
   if ($(".element").hasClass("editing")) {
     $(".element").removeClass("editing");
   }
-}
+};
+
+ElementView.prototype.hideIcons = function() {
+  $(".delete").hide();
+  $(".done").hide();
+};
+
+ElementView.prototype.showIcons = function(elm_id) {
+  $("#" + elm_id + ">.delete").show();
+  $("#" + elm_id + ">.done").show();
+};

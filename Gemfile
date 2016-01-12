@@ -5,6 +5,7 @@ gem 'materialize-sass'
 gem 'paperclip'
 gem 'aws-sdk', "< 2.0"
 gem 'packery-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -27,17 +28,27 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem "omniauth", "~> 1.1.1"
+gem "omniauth-facebook", "~> 1.4.1"
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
   gem 'faker'
+  gem 'dotenv-rails'
+
+  gem "omniauth", "~> 1.1.1"
+  gem "omniauth-facebook", "~> 1.4.1"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'spring'
+
+  gem "omniauth", "~> 1.1.1"
+  gem "omniauth-facebook", "~> 1.4.1"
 end
 
 

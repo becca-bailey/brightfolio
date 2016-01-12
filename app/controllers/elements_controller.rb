@@ -33,13 +33,16 @@ class ElementsController < ApplicationController
   end
 
   def update
+    @element = Element.new(element_params)
+    @folio = Folio.find(params[:folio_id])
+    @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
       if @element.update(element_params)
         @folio = Folio.find(params[:folio_id])
-        format.html { redirect_to @folio, notice: 'Element was successfully updated.' }
+        format.html { redirect_to folio_elements_path, notice: 'Element was successfully updated.' }
         format.json { render :show, status: :ok, location: @folio }
       else
-        format.html { render :edit }
+        format.html { render :index }
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end

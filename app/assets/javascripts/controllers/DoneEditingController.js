@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("#new_element").trigger("reset");
     folioView.toggleSidebar();
     elementView.hideIcons();
+    $("#form-title").text("Add an element to your folio");
   });
 
 });

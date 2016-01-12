@@ -13,7 +13,7 @@ function clickToEdit() {
     $(this).addClass("editing");
     elementView.showIcons(elm_id);
     edit(elm_id);
-    // update(elm_id);
+    update(elm_id);
   });
 }
 
@@ -28,24 +28,24 @@ function edit(elm_id) {
   });
 }
 
-// function update(elm_id) {
-//   $("#new_element").on("change", function() {
-//     var data = $(this).serialize();
-//     $.ajax({
-//       dataType: "json",
-//       method: "PUT",
-//       url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id,
-//       data: data
-//     }).done(function(responseData) {
-//       var updatedView = new ElementView();
-//       updatedView.update(responseData, elm_id);
-//       $("#new_element").trigger("reset");
-//       $("#" + elm_id).removeClass("editing");
-//       var folioView = new FolioView();
-//       folioView.toggleSidebar();
-//     });
-//   });
-// }
+function update(elm_id) {
+  $("#new_element").on("change", function() {
+    var data = $(this).serialize();
+    $.ajax({
+      dataType: "json",
+      method: "PUT",
+      url: "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id,
+      data: data
+    }).done(function(responseData) {
+      var updatedView = new ElementView();
+      updatedView.update(responseData, elm_id);
+      $("#new_element").trigger("reset");
+      $("#" + elm_id).removeClass("editing");
+      var folioView = new FolioView();
+      folioView.toggleSidebar();
+    });
+  });
+}
 
 function changeFormMethod(elm_id) {
   var formAction = "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id;

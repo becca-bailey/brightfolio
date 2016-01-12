@@ -8,13 +8,22 @@
   right: 0;
 }
 
-.delete {
-  color: rgba(255,255,255,.7);
+.delete, .done {
+  opacity: .8;
   position: absolute;
-  top: 5px;
   right: 5px;
   &:hover {
-    color: white;
+    opacity: 1;
     cursor: pointer;
   }
+}
+
+.delete {
+  top: 5px;
+  color: white;
+}
+
+.done {
+  top: 25px;
+  color: teal;
 }

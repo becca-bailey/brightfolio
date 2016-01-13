@@ -5,6 +5,7 @@ class CreateFolios < ActiveRecord::Migration
       t.integer :primary_element_id
       t.string :title
       t.string :description
+      t.string :token
 
       t.timestamps null: false
     end

@@ -13,7 +13,9 @@ function clickToEdit() {
     $(this).addClass("editing");
     elementView.showIcons(elm_id);
     $("#form-title").text("Edit your element");
-    edit(elm_id);
+    $("#" + elm_id + ">.delete").show();
+    $("#" + elm_id + ">.done").show();
+
     // update(elm_id);
   });
 }
@@ -61,4 +63,3 @@ function revertFormMethod() {
   $("#new_element").attr("action", formAction );
   $("#new_element").remove("#put");
 }
-

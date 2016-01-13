@@ -1,11 +1,17 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  before_action :authorize, except: :index
 
   def index
     @folio = Folio.find(params[:folio_id])
     @element = Element.new
     @elements = @folio.elements.order("created_at DESC")
+    if params[:token] != nil
+      check_for_token
+      render "public_index"
+    else
+      authorize
+    end
   end
 
   # def new
@@ -22,6 +28,7 @@ class ElementsController < ApplicationController
     # @element.format_link
 
     @element.font = params[:font]
+    @element.width = params[:width]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
@@ -62,6 +69,13 @@ class ElementsController < ApplicationController
   end
 
   private
+
+    def check_for_token
+      folio = Folio.find(params[:folio_id])
+      unless folio.token == params[:token]
+        redirect_to login_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_element
       @element = Element.find(params[:id])

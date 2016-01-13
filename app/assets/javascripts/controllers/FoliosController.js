@@ -1,10 +1,15 @@
 $(document).ready(function() {
-  var containerView = new ContainerView();
-  var $container = $("#container").packery();
-  containerView.packery(".modular");
-  containerView.modularDraggable(".modular");
-  packeryToggle();
+  $(window).load(function() {
+    $('.modal-trigger').leanModal();
+    var containerView = new ContainerView();
+    var $container = $("#container").packery();
+    containerView.packery(".modular");
+    containerView.modularDraggable(".modular");
+    packeryToggle();
+    styleFormFields();
+  });
 });
+
 
 function packeryToggle() {
   $('#packery-toggle').on('click', function() {
@@ -24,4 +29,3 @@ function packeryToggle() {
   });
 
 }
-

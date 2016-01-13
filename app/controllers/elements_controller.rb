@@ -1,6 +1,7 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
   before_action :authorize
+  # before_save :format_link
 
   def index
     @folio = Folio.find(params[:folio_id])
@@ -19,7 +20,7 @@ class ElementsController < ApplicationController
   def create
     @element = Element.new(element_params)
 
-    # @element.format_link
+    @element.format_link
 
     @element.font = params[:font]
     @folio = Folio.find(params[:folio_id])

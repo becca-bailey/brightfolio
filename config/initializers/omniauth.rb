@@ -9,6 +9,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     provider_ignores_state: true,
 
   }
+
+  provider :twitter, 'w9LjuYfzE709KFVvzHrtXUeS1', 'yuxzvI1ptaghX3a9yWXu0XTDyYcog07EdccDQUNO6idqRTfa2A',
+  {
+    strategy_class: OmniAuth::Strategies::Twitter,
+    provider_ignores_state: true,
+
+  }
 end
 
 # Rails.application.config.middleware.use OmniAuth::Builder do

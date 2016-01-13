@@ -18,10 +18,10 @@ class ElementsController < ApplicationController
 
   def create
     @element = Element.new(element_params)
+
+    # @element.format_link
+
     @element.font = params[:font]
-    # p '$$$$$$$$$$$$$$$$$$$$$$$$'
-    # p @element.font
-    # p params[:font]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
@@ -33,10 +33,12 @@ class ElementsController < ApplicationController
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
 
   def update
-    @element = Element.new(element_params)
+    @element.font = params[:font]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
@@ -67,6 +69,7 @@ class ElementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def element_params
-      params.require(:element).permit(:folio_id, :title, :description, :citation, :image, :image_content_type, :element_link, :font)
+
+      params.require(:element).permit(:folio_id, :title, :description, :citation, :image, :document, :image_content_type, :document_content_type, :audio, :audio_content_type, :element_link, :font)
     end
 end

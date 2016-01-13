@@ -13,7 +13,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :pinterest_link
       t.string :link_1
       t.string :link_2
-      t.timestamps null: false
+
+      t.string :provider
+      t.string :uid
+      t.string :name
+      t.string :oauth_token
+      t.datetime :oauth_expires_at
 
       t.timestamps null: false
     end

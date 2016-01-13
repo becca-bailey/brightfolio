@@ -10,5 +10,5 @@ $(document).ready(function() {
     elementView.hideIcons();
     $("#form-title").text("Add an element to your folio");
   });
-
 });
+

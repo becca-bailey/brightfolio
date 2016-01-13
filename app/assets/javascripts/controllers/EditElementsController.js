@@ -29,6 +29,7 @@ function edit(elm_id) {
   });
 }
 
+
 function update(elm_id) {
   $("#new_element").on("change", function() {
     var data = $(this).serialize();
@@ -54,8 +55,10 @@ function changeFormMethod(elm_id) {
   $("#new_element").prepend("<input id='put' type='hidden' name='_method' value='put' />");
 }
 
+
 function revertFormMethod() {
   var formAction = "/folios/" + REGISTRY.folio_id + "/elements";
   $("#new_element").attr("action", formAction );
   $("#new_element").remove("#put");
 }
+

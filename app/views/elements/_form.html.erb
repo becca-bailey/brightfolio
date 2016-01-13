@@ -13,47 +13,53 @@
       </ul>
     </div>
   <% end %>
-
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
-  <div class="field">
 
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :citation %><br>
-    <%= f.text_field :citation %>
-  </div>
-
-  <div class="field">
-    <%= select_tag(:font, options_for_select([['Sumana', 'sumana'], ['Raleway', 'raleway'], ['Share', 'share'],['Satisfy', 'satisfy'],['Droid Sans Mono', 'droid']])) %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :element_link %>
-    <%= f.text_field :element_link %>
-  </div>
-
-    <div class="input-field">
-      <%= f.label :image %><br>
-      <%= f.file_field :image, class: :"input[type='button']"  %>
-    </div>
-
-    <div>
-      <%= f.label :file %><br>
-      <%= f.file_field :file  %>
-    </div>
-
-
-<% #TODO link_to "Delete", { action: :destroy, id: folio_element.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">library_add</i>Title</div>
+      <div class="collapsible-body">
+        <div class="field">
+          <%= f.text_field :title %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">comment</i>Text</div>
+      <div class="collapsible-body">
+        <div class="field">
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <%= select_tag(:font, options_for_select([['Sumana', 'sumana'], ['Raleway', 'raleway'], ['Share', 'share'],['Satisfy', 'satisfy'],['Droid Sans Mono', 'droid']])) %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">launch</i>Link</div>
+      <div class="collapsible-body">
+        <div class="field">
+          <%= f.text_field :element_link %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">picture_in_picture</i>Image</div>
+      <div class="collapsible-body">
+        <div class="input-field">
+          <%= f.file_field :image, class: :"input[type='button']"  %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">note_add</i>File</div>
+      <div class="collapsible-body">
+        <div>
+          <%= f.file_field :file  %>
+        </div>
+      </div>
+    </li>
+  </ul>
 
   <div class="actions">
     <%= f.submit "Submit", class: :"waves-effect waves-light btn"  %>

@@ -3,14 +3,18 @@
   <div class="container clearfix">
   <% #TODO: Title alsways shows up as title of first folio %>
     <div class="top-bar">
-      <h1 class="header"><%= @folio.title %></h1>
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Share</a>
+      <div class="icons">
+        <h1 class="header"><%= @folio.title %></h1>
+        <a class="modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Share" href="#modal2"><i class="medium material-icons">launch</i></a>
+        <%= link_to folio_elements_path(@folio, mood_board: true) do %>
+          <i class="medium material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mood Board">view_quilt</i>
+        <% end %>
+        <a id="add-element" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Toggle Controls" href=#><i class="medium material-icons">create</i></a>
+      </div>
     </div>
     <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
     <p id="notice"><%= notice %></p>
-    <button id="add-element" type="button" class="waves-effect waves-light btn right clearfix">Toggle Controls</button>
 
-    <i id="packery-toggle" class="material-icons">view_quilt</i>
     <div class="row">
       <div class="col s12 m9 elements" id="container">
         <% if @elements %>

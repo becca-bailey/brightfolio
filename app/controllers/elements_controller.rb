@@ -19,9 +19,6 @@ class ElementsController < ApplicationController
   def create
     @element = Element.new(element_params)
     @element.font = params[:font]
-    # p '$$$$$$$$$$$$$$$$$$$$$$$$'
-    # p @element.font
-    # p params[:font]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
@@ -36,7 +33,7 @@ class ElementsController < ApplicationController
   end
 
   def update
-    @element = Element.new(element_params)
+    @element.font = params[:font]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|

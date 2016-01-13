@@ -7,19 +7,20 @@ $(document).ready(function() {
 });
 
 function packeryToggle() {
-  var $container = $('#container').packery();
-  var isActive = false;
-
   $('#packery-toggle').on('click', function() {
-    // $(".element").toggleClass(".modular").toggleClass(".draggable");
+    var isActive = true;
+    var $container = $('#container').packery();
     if ( isActive ) {
-      $(this).css("color", "teal");
-      containerView.draggable(".draggable");
+      $container.find(".modular").each( function( i, itemElem ) {
+        var draggie = new Draggabilly( itemElem );
+        $container( 'bindDraggabillyEvents', draggie );
+      });
     } else {
-      $container.packery();
-      $(this).css("color", "black");
+      var $draggable = $('.draggable').draggabilly();
+      $draggable.draggabilly('disable');
     }
     isActive = !isActive;
+    $(".element").toggleClass(".modular").toggleClass(".draggable");
   });
 
 }

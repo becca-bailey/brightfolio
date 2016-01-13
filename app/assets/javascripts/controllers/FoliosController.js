@@ -1,25 +1,26 @@
 $(document).ready(function() {
   var containerView = new ContainerView();
   var $container = $("#container").packery();
-  containerView.packery(".element");
-  containerView.modularDraggable(".element");
+  containerView.packery(".modular");
+  containerView.modularDraggable(".modular");
   packeryToggle();
 });
 
 function packeryToggle() {
-  var $container = $('#container').packery();
-  var isActive = true;
-
   $('#packery-toggle').on('click', function() {
+    var isActive = true;
+    var $container = $('#container').packery();
     if ( isActive ) {
-      $container.packery('destroy');
-      $(this).removeClass("teal lighten-2");
+      $container.find(".modular").each( function( i, itemElem ) {
+        var draggie = new Draggabilly( itemElem );
+        $container( 'bindDraggabillyEvents', draggie );
+      });
     } else {
-      $container.packery();
-      $(this).addClass("teal lighten-2");
-      containerView.draggable(".element");
+      var $draggable = $('.draggable').draggabilly();
+      $draggable.draggabilly('disable');
     }
     isActive = !isActive;
+    $(".element").toggleClass(".modular").toggleClass(".draggable");
   });
 
 }

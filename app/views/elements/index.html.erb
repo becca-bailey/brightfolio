@@ -2,7 +2,10 @@
 
   <div class="container clearfix">
   <% #TODO: Title alsways shows up as title of first folio %>
-    <h1 class="header"><%= @folio.title %></h1>
+    <div class="top-bar">
+      <h1 class="header"><%= @folio.title %></h1>
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Share</a>
+    </div>
     <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
     <p id="notice"><%= notice %></p>
     <button id="add-element" type="button" class="waves-effect waves-light btn right clearfix">Toggle Controls</button>
@@ -18,9 +21,20 @@
       </div>
 
       <div class="col s12 m3" id="sidebar">
-        <%= render "elements/form"  %>
-        <button id='delete'>Delete Element</button>
+        <%= render "form"  %>
       </div>
+
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <h4>Share a link to this folio!</h4>
+          <p>Copy this link to share.</p>
+          <div class="input-field col s12">
+            <input type="text" name="name" value="http://localhost:3000/folios/<%= @folio.id %>/elements?token=<%= @folio.token %>">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OKAY</a>
+        </div>
     </div>
   </div>
 </div>

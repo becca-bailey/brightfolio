@@ -34,7 +34,7 @@ class Element < ActiveRecord::Base
     if /^(http:\/\/www.|https:\/\/www.)/.match(self.element_link)
       self.element_link
     elsif /^(http:\/\/|https:\/\/)/.match(self.element_link)
-     self.element_link = "www" + self.element_link
+     self.element_link = /^(http:\/\/|https:\/\/)/ + self.element_link
     else
       self.element_link = "http://www." + self.element_link
     end

@@ -69,6 +69,6 @@ class FoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def folio_params
-      params.require(:folio).permit(:user_id, :title, :description)
+      params.require(:folio).permit(:user_id, :title, :description, :token)
     end
 end

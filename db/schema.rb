@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112152323) do
+ActiveRecord::Schema.define(version: 20160113051344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.string   "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "token_file_name"
+    t.string   "token_content_type"
+    t.integer  "token_file_size"
+    t.datetime "token_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,7 +67,6 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.string   "link_2"
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false

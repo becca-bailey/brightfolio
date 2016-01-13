@@ -9,6 +9,9 @@ class ElementsController < ApplicationController
     if params[:token] != nil
       check_for_token
       render "public_index"
+    elsif params[:mood_board]
+      authorize
+      render "mood_board"
     else
       authorize
     end

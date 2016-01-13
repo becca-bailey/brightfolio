@@ -1,17 +1,79 @@
+<<<<<<< HEAD
 <div id=<%= element.id %> class="element card modular <%= element.font %>">
+=======
+>>>>>>> c3b9711cf31e19bec6b163904782e2a1f98c6fe9
 
+<div id=<%= element.id %> class="element card <%= element.font %>">
   <i class="material-icons delete">close</i>
   <i class="material-icons done">done</i>
-  <% if element.image.file? %>
-		<div class="card-image"><%= image_tag element.image.url %>
 
+  <% if element.image.file? %>
+    <div class="card-image"><%= link_to element.image.url do %>
+        <%= image_tag element.image.url %>
+      <% end %>
+    <% if element.element_link.empty?%>
+    <% else %>
+      <%= link_to element.element_link, class: 'right' do %>
+       <i class="material-icons">link</i>
+       <a href="<%=element.element_link%>" target="_blank"></a>
+      <% end %>
+    <% end %>
+    <div class="title"><%= element.title %></div>
+    <div class="description"><%= element.description %></div>
     </div>
-  <% end %>
-  <div class="title"><%= element.title %></div>
-  <div class="description"><%= element.description %></div>
-  <% if element.element_link %>
-    <%= link_to element.element_link, class: 'right' do %>
-    <i class="material-icons">link</i>
-  <% end %>
+
+  <%elsif element.document.file? %>
+     <div class="card-image"><%= link_to element.document.url do %>
+        <%= image_tag ("documentlogo.png") %>
+      <% end %>
+      <% if element.element_link.empty?%>
+      <% else %>
+      <%= link_to element.element_link, class: 'right' do %>
+        <i class="material-icons">link</i>
+        <a href="<%=element.element_link%>" target="_blank"></a>
+      <% end %>
+      <% end %>
+      <div class="title"><%= element.title %></div>
+      <div class="description"><%= element.description %></div>
+      </div>
+
+  <%elsif element.audio.file? %>
+     <div class="card-image"><%= link_to element.audio.url do %>
+        <%= image_tag ("musiclogo.png") %>
+      <% end %>
+
+      <% if element.element_link.empty?%>
+      <% else %>
+      <%= link_to element.element_link, class: 'right' do %>
+        <i class="material-icons">link</i>
+        <a href="<%=element.element_link%>" target="_blank"></a>
+      <% end %>
+      <% end %>
+      <div class="title"><%= element.title %></div>
+      <div class="description"><%= element.description %></div>
+    </div>
+
+  <% elsif element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
+      <div class="card-image">
+        <%#= image_tag ("pencil.png") %>
+        <div class="title"><%= element.title %></div>
+        <div class="description"><%= element.description %></div>
+      </div>
+
+  <% else %>
+    <div class="card-image">
+      <%#=# link_to element.element_link do %>
+        <%= image_tag ("internet-globe.jpg") %>
+      <%# end %>
+      <% if element.element_link.empty?%>
+      <% else %>
+          <%= link_to element.element_link, class: 'right' do %>
+            <i class="material-icons">link</i>
+            <a href="<%=element.element_link%>" target="_blank"></a>
+          <% end %>
+    <% end %>
+        <div class="title"><%= element.title %></div>
+        <div class="description"><%= element.description %></div>
+    </div>
   <% end %>
 </div>

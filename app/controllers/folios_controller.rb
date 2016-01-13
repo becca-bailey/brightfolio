@@ -1,31 +1,25 @@
 class FoliosController < ApplicationController
   before_action :set_folio, only: [:show, :edit, :update, :destroy]
   before_action :authorize
-  # GET /folios
-  # GET /folios.json
+
+
   def index
     @folios = current_user.folios.order("created_at DESC")
   end
 
-  # GET /folios/1
-  # GET /folios/1.json
-  # def show
-  #   @folio = Folio.find(params[:id])
-  #   @element = Element.new
-  #   @elements = @folio.elements.order("created_at DESC")
-  # end
+  def show
+    @element = Element.new
+    @elements = @folio.elements.order("created_at DESC")
+    @folio = Folio.find(params[:id])
+  end
 
-  # GET /folios/new
   def new
     @folio = Folio.new
   end
 
-  # GET /folios/1/edit
   def edit
   end
 
-  # POST /folios
-  # POST /folios.json
   def create
 
     @folio = current_user.folios.new(folio_params)

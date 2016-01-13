@@ -1,69 +1,58 @@
-<%= form_for(@user) do |f| %>
-<div class="errors">
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="form-container">
+  <%= form_for(@user) do |f| %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="field col s6">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
     </div>
+    <div class="field col s6">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :bio %>
+      <%= f.text_field :bio %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :facebook_link %>
+      <%= f.text_field :facebook_link %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :twitter_link %>
+      <%= f.text_field :twitter_link %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :github_link %>
+      <%= f.text_field :github_link %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :instagram_link %>
+      <%= f.text_field :instagram_link %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :pinterest_link %>
+      <%= f.text_field :pinterest_link %>
+    </div>
+    <div class="field col s6">
+      <%= f.label :link_1 %>
+      <%= f.text_field :link_1 %>
+    </div>
+     <div class="field col s6">
+      <%= f.label :link_2 %>
+      <%= f.text_field :link_2 %>
+    </div>
+    <div class="actions col s12">
+       <%= f.submit "Submit", class: :"waves-effect waves-light btn" %>
+    </div>
+  </div>
   <% end %>
 </div>
-<div class="row">
-  <div class="field col s6">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="input-field col s12">
-    <%= f.label :bio %><br>
-    <%= f.text_field :bio %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :facebook_link %><br>
-    <%= f.text_field :facebook_link %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :twitter_link %><br>
-    <%= f.text_field :twitter_link %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :github_link %><br>
-    <%= f.text_field :github_link %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :instagram_link %><br>
-    <%= f.text_field :instagram_link %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :pinterest_link %><br>
-    <%= f.text_field :pinterest_link %>
-  </div>
-  <div class="field col s6">
-    <%= f.label :link_1 %><br>
-    <%= f.text_field :link_1 %>
-  </div>
-   <div class="field col s6">
-    <%= f.label :link_2 %><br>
-    <%= f.text_field :link_2 %>
-  </div>
-  <div class="actions col s12">
-     <%= f.submit "Submit", class: :"waves-effect waves-light btn" %>
-  </div>
-</div>
-<% end %>
-

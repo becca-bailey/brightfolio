@@ -28,6 +28,20 @@
         </div>
       </div>
     </li>
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">invert_colors</i>Color</div>
+      <div class="collapsible-body">
+        <div class="field">
+          <%= f.text_area :font %>
+        </div>
+        <div class="input-field">
+          <%= select_tag(:font, options_for_select([["Black", 'black-font', {:div=>"color: #000000;"} ], ["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
+                    ["Red", 'red-font', {:div=>"color: #FF0000;"}],["Orange", 'orange-font', {:div=>"color: #FFA500;"}],
+                    ["Yellow", 'yellow-font', {:div=>"color: #FFFF00;"}],["Green", 'green-font', {:div=>"color: #008000;;"}],["Blue", 'blue-font', {:div=>"color: #0000FF;"}],["Indigo", 'indigo-font', {:div=>"color: #4B0082;"}],["Violet", 'violet-font', {:div=>"color: #800080;"}]])) %>
+        </div>
+      </div>
+    </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">launch</i>Link</div>
       <div class="collapsible-body">

@@ -4,8 +4,8 @@
 
     <% if element.image.file? %>
       <div class="card-image"><%= link_to element.image.url do %>
-          <%= image_tag element.image.url %>
-        <% end %></div>
+          <%= image_tag element.image.url %> </div>
+        <% end %>
 
       <% if element.element_link.empty?%>
       <% else %>
@@ -14,12 +14,14 @@
          <a href="<%=element.element_link%>" target="_blank"></a>
         <% end %>
       <% end %>
+      <div class="title"><%= element.title %></div>
       <div class="description"><%= element.description %></div>
+
 
     <%elsif element.document.file? %>
        <div class="card-image"><%= link_to element.document.url do %>
-          <%= image_tag ("documentlogo.png") %>
-        <% end %></div>
+          <%= image_tag ("documentlogo.png") %></div>
+        <% end %>
 
         <% if element.element_link.empty?%>
         <% else %>
@@ -28,12 +30,14 @@
           <a href="<%=element.element_link%>" target="_blank"></a>
         <% end %>
         <% end %>
+        <div class="title"><%= element.title %></div>
         <div class="description"><%= element.description %></div>
+
 
     <%elsif element.audio.file? %>
        <div class="card-image"><%= link_to element.audio.url do %>
-          <%= image_tag ("musiclogo.png") %>
-        <% end %></div>
+          <%= image_tag ("musiclogo.png") %></div>
+        <% end %>
 
         <% if element.element_link.empty?%>
         <% else %>
@@ -42,38 +46,38 @@
           <a href="<%=element.element_link%>" target="_blank"></a>
         <% end %>
         <% end %>
+        <div class="title"><%= element.title %></div>
         <div class="description"><%= element.description %></div>
+      </div>
+
+
+      <% elsif element.element_link && !element.image? && !element.document? && !element.audio?  %>
+        <div class="card-image">
+          <%#=# link_to element.element_link do %>
+            <%= image_tag ("internet-globe.jpg") %></div>
+          <%# end %>
+          <% if element.element_link.empty?%>
+          <% else %>
+              <%= link_to element.element_link, class: 'right' do %>
+                <i class="material-icons">link</i>
+                <a href="<%=element.element_link%>" target="_blank"></a>
+              <% end %>
+          <% end %>
+              <div class="title"><%= element.title %></div>
+              <div class="description"><%= element.description %></div>
 
 
 
-      <% elsif element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
+      <%# elsif element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
+        <% else %>
           <div class="card-image">
-           <%#= image_tag ("pencil.png") %>
-           <%= element.description %>
-        </div>
-
-
-      <% else %>
-       <div class="card-image">
-        <%#=# link_to element.element_link do %>
-          <%= image_tag ("internet-globe.jpg") %>
-        <%# end %>
-        </div>
-        <% if element.element_link.empty?%>
-        <% else %>
-        <%= link_to element.element_link, class: 'right' do %>
-          <i class="material-icons">link</i>
-          <a href="<%=element.element_link%>" target="_blank"></a>
-        <% end %>
-        <% end %>
-        <div class="description"><%= element.description %></div>
+            <%#= image_tag ("pencil.png") %>
+            <div class="title"><%= element.title %></div>
+            <div class="description"><%= element.description %></div>
+          </div>
 
 
     <% end %>
-
-
-  <div class="title"><%= element.title %></div>
-
 
 
 </div>

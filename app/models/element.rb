@@ -23,7 +23,7 @@ class Element < ActiveRecord::Base
 
   def any_present?
 
-    if %w(title image document audio element_link description).all?{|attr| self[attr].blank?}
+    if %w(title image element.document? audio element_link description).all?{|attr| self[attr].blank?}
     errors.add :base, "You must include at least one field for this element."
     end
   end

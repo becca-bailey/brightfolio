@@ -51,7 +51,15 @@
       </div>
 
 
-      <% elsif element.element_link && !element.image? && !element.document? && !element.audio?  %>
+      <% elsif element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
+
+          <div class="card-image">
+            <%#= image_tag ("pencil.png") %>
+            <div class="title"><%= element.title %></div>
+            <div class="description"><%= element.description %></div>
+          </div>
+
+      <% else %>
         <div class="card-image">
           <%#=# link_to element.element_link do %>
             <%= image_tag ("internet-globe.jpg") %></div>
@@ -68,13 +76,8 @@
 
 
 
-      <%# elsif element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
-        <% else %>
-          <div class="card-image">
-            <%#= image_tag ("pencil.png") %>
-            <div class="title"><%= element.title %></div>
-            <div class="description"><%= element.description %></div>
-          </div>
+
+
 
 
     <% end %>

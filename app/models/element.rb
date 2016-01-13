@@ -27,15 +27,14 @@ class Element < ActiveRecord::Base
     end
   end
 
-  def format_link
-    # is called in elements_controller
+  # def format_link
+  #   # is called in elements_controller
 
-    unless self.element_link.match(/\Ahttp:\/\/www./) || self.element_link.match(/\Ahttps:\/\/www./)
-      # self.element_link = "http://" + self.element_link
-      self.element_link = "http://www." + self.element_link
-    end
-
-  end
+  #   unless self.element_link.match(/\Ahttp:\/\/www./) || self.element_link.match(/\Ahttps:\/\/www./)
+  #     # self.element_link = "http://" + self.element_link
+  #     self.element_link = "http://www." + self.element_link
+  #   end
+  # end
 
 
 end

@@ -19,7 +19,7 @@ class ElementsController < ApplicationController
   def create
 
     @element = Element.new(element_params)
-    @element.format_link
+    # @element.format_link
 
     @folio = Folio.find(params[:folio_id])
     respond_to do |format|

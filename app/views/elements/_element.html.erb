@@ -1,14 +1,16 @@
-<div class="element card" id=<%= element.id %>>
+<div class="element card" id="<%= element.id %>">
   <i class="material-icons delete">close</i>
   <i class="material-icons done">done</i>
   <% if element.image.file? %>
-		<div class="card-image">
-      <%= image_tag element.image.url %>
+		<div class="card-image"><%= image_tag element.image.url %>
+
     </div>
   <% end %>
   <div class="title"><%= element.title %></div>
   <div class="description"><%= element.description %></div>
   <% if element.element_link %>
-    <%= link_to "View More", element.element_link %>
+    <%= link_to element.element_link, class: 'right' do %>
+    <i class="material-icons">link</i>
+  <% end %>
   <% end %>
 </div>

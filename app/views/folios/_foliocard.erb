@@ -4,9 +4,23 @@
         <li><div class="collapsible-header active title"><h2 class="center"><%= link_to folio.title, folio_elements_path(folio) %></h2></div></li>
         <li>
           <div class="collapsible-header ch2 no-bottom valign-wrapper"><i class="material-icons drop">arrow_drop_down</i><p><%= folio.description %></p></div>
+          <div class="collapsible-body center"><a class="modal-trigger" href="#modal1">Share</a></div>
           <div class="collapsible-body center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
-          <div class="collapsible-body center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure you want to delete this folio?  All your contents will be lost.' } %></div>
+          <div class="collapsible-body center"><%= link_to 'Delete', folio, method: :delete, data: { confirm: 'Are you sure you want to delete this folio?  All your contents will be lost.' } %></div>
         </li>
       </ul>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Share a link to this folio!</h4>
+        <p>Copy this link to share.</p>
+        <div class="input-field col s12">
+          <input type="text" name="name" value="http://localhost:3000/folios/<%= folio.id %>/elements?token=<%= folio.token %>">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OKAY</a>
+      </div>
     </div>
     <% end %>

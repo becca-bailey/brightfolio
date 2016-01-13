@@ -1,0 +1,23 @@
+<div class="folio">
+
+  <div class="container clearfix">
+  <% #TODO: Title alsways shows up as title of first folio %>
+    <div class="top-bar">
+      <h1 class="header"><%= @folio.title %></h1>
+      <%= link_to folio_elements_path(@folio) do %>
+        <i class="medium material-icons">chevron_left</i>
+      <% end %>
+    </div>
+    <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
+    <p id="notice"><%= notice %></p>
+
+    <div class="col s12 m12" id="container">
+      <% if @elements %>
+        <% @elements.each do |element| %>
+          <%= render "elements/element_public", element: element %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -8,19 +8,22 @@
   right: 0;
 }
 
-.delete, .done {
+.delete,
+.done,
+.hide{
   opacity: .8;
   position: absolute;
   right: 5px;
+  z-index: 999;
   &:hover {
     opacity: 1;
     cursor: pointer;
   }
 }
 
-.delete {
+.delete, .hide {
   top: 5px;
-  color: white;
+  color: red;
 }
 
 .done {

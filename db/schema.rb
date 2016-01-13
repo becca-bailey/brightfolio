@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.string   "citation"
     t.string   "element_link"
     t.string   "font"
+    t.string   "width"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "image_file_name"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.integer  "primary_element_id"
     t.string   "title"
     t.string   "description"
+    t.string   "token"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

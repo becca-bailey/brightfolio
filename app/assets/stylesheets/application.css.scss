@@ -159,6 +159,9 @@ background-color: #ffffff;
 
 /* text */
 /* five possible fonts for drop down */
+.font-selection {
+
+}
 .sumana {
    font-family: 'Sumana', serif;
  }
@@ -179,6 +182,43 @@ background-color: #ffffff;
   font-family: 'Droid Sans Mono', ;
 }
 
+/* five possible colors for fonts for drop down */
+
+.black-font {
+  color: #000000;
+}
+
+.brown-font {
+  color: #A52A2A;
+}
+
+.red-font {
+  color: #FF0000;
+}
+
+.orange-font {
+  color: #FFA500;
+}
+
+.yellow-font {
+  color: #FFFF00;
+}
+
+.green-font {
+  color: #008000;
+}
+
+.blue-font {
+  color: #0000FF;
+}
+
+.indigo-font {
+  color: #4B0082;
+}
+
+.violet-font {
+  color: #800080;
+}
 
 h1.header {
   background-color: #000;

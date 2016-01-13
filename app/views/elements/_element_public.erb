@@ -1,29 +1,14 @@
-<<<<<<< HEAD
-<div id=<%= element.id %> class="element card <%= element.font %>">
-=======
-
-<div id=<%= element.id %> class="element card modular <%= element.font %> <%= element.width %>">
->>>>>>> master
-  <i class="material-icons delete">close</i>
-  <i class="material-icons done">done</i>
+<div id="<%= element.id %>" class="element-public card freeform <%= element.font %> <%= element.width %>">
+  <i class="material-icons hide">close</i>
 
   <% if element.image.file? %>
-<<<<<<< HEAD
-    <div class="card-image"><%= link_to element.image.url, :target => '_blank' do %>
-        <%= image_tag element.image.url %>
-      <% end %>
-    <% if element.element_link.empty?%>
-    <% else %>
-      <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
-=======
     <div class="card-image">
         <%= image_tag element.image.url, class: "materialboxed" %>
     <% if element.element_link.empty?%>
     <% else %>
-      <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
->>>>>>> master
+      <%= link_to element.element_link, class: 'right' do %>
        <i class="material-icons">link</i>
-       <a href="<%=element.element_link%>"></a>
+       <a href="<%=element.element_link%>" target="_blank"></a>
       <% end %>
     <% end %>
     <div class="title"><%= element.title %></div>
@@ -31,18 +16,14 @@
     </div>
 
   <%elsif element.document.file? %>
-     <div class="card-image"><%= link_to element.document.url, :target => '_blank' do %>
+     <div class="card-image"><%= link_to element.document.url do %>
         <%= image_tag ("documentlogo.png") %>
       <% end %>
       <% if element.element_link.empty?%>
       <% else %>
-<<<<<<< HEAD
-      <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
-=======
-      <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
->>>>>>> master
+      <%= link_to element.element_link, class: 'right' do %>
         <i class="material-icons">link</i>
-        <a href="<%=element.element_link%>"></a>
+        <a href="<%=element.element_link%>" target="_blank"></a>
       <% end %>
       <% end %>
       <div class="title"><%= element.title %></div>
@@ -50,19 +31,15 @@
       </div>
 
   <%elsif element.audio.file? %>
-     <div class="card-image"><%= link_to element.audio.url, :target => '_blank' do %>
+     <div class="card-image"><%= link_to element.audio.url do %>
         <%= image_tag ("musiclogo.png") %>
       <% end %>
 
       <% if element.element_link.empty?%>
       <% else %>
-<<<<<<< HEAD
-      <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
-=======
-      <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
->>>>>>> master
+      <%= link_to element.element_link, class: 'right' do %>
         <i class="material-icons">link</i>
-        <a href="<%=element.element_link%>"></a>
+        <a href="<%=element.element_link%>" target="_blank"></a>
       <% end %>
       <% end %>
       <div class="title"><%= element.title %></div>
@@ -78,18 +55,14 @@
 
   <% else %>
     <div class="card-image">
-      <%#=# link_to element.element_link, :target => '_blank' do %>
+      <%#=# link_to element.element_link do %>
         <%= image_tag ("internet-globe.jpg") %>
       <%# end %>
       <% if element.element_link.empty?%>
       <% else %>
-<<<<<<< HEAD
-          <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
-=======
-          <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
->>>>>>> master
+          <%= link_to element.element_link, class: 'right' do %>
             <i class="material-icons">link</i>
-            <a href="<%=element.element_link%>"></a>
+            <a href="<%=element.element_link%>" target="_blank"></a>
           <% end %>
     <% end %>
         <div class="title"><%= element.title %></div>

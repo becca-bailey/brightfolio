@@ -6,15 +6,12 @@ class Folio < ActiveRecord::Base
 
   validates :title, { presence: true }
 
-  # def generate_token
-  #   self.token = Digest::SHA1.hexdigest([self.grouping_id, Time.now, rand].join)
-  # end
+  before_create :generate_token
 
-  # def check_user_existence
-  #   recipient = User.find_by_email(self.email)
-  #   if recipient
-  #     self.recipient_id = recipient.id
-  #   end
-  # end
+  private
+
+  def generate_token
+    self.token = Digest::SHA1.hexdigest([Time.now, rand].join)
+  end
 
 end

@@ -18,10 +18,10 @@ ContainerView.prototype.modularDraggable = function(className) {
   });
 };
 
-ContainerView.prototype.draggable = function(className) {
+ContainerView.prototype.freeformDraggable = function(className) {
   var $container = $("#container");
   $container.find(className).each( function( i, itemElem ) {
     var draggie = new Draggabilly( itemElem );
-    $container( 'bindDraggabillyEvents', draggie );
+    $container.packery( draggie );
   });
 };

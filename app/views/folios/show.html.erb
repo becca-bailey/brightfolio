@@ -6,7 +6,19 @@
     <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
     <p id="notice"><%= notice %></p>
   <!-- <button id="view-toggle" type="button" class="waves-effect waves-light btn right clearfix">Toggle Controls</button> -->
-   <button id="change-font" type="button" class="waves-effect waves-light btn right clearfix">Change Font</button>
+  <!--  <button id="change-font" type="button" class="waves-effect waves-light btn right clearfix">Change Font</button> -->
+   <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Change Font</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown2' class='dropdown-content'>
+    <li><a class='serif' href="#">Sumana</a></li>
+    <li><a class='sans-serif'<a href="#">Raleway</a></li>
+    <!-- <li class="divider"></li> -->
+    <li><a class='display' href="#">Share</a></li>
+    <li><a class='handwriting' href="#">Satisfy</a></li>
+    <li><a class='monospace' href="#">Droid Sans Mono</a></li>
+  </ul>
     <button id="add-element" type="button" class="waves-effect waves-light btn right clearfix">Add Element</button>
 
     <div class="row">

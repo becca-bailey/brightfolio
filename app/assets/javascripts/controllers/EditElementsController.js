@@ -13,7 +13,7 @@ function clickToEdit() {
     $(this).addClass("editing");
     elementView.showIcons(elm_id);
     $("#form-title").text("Edit your element");
-
+    edit(elm_id);
     // update(elm_id);
   });
 }

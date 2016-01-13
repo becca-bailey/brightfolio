@@ -35,6 +35,12 @@ $primary-color: color("black", "lighten-2") !default;
 /*main containers*/
 body {
 background-color: #ffffff;
+min-height: 100vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
 }
 
 .folio {

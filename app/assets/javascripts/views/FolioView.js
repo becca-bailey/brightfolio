@@ -4,7 +4,7 @@ function FolioView() {
 
 FolioView.prototype.toggleSidebar = function() {
   $container = $("#container").packery();
-  $("#container").toggleClass("m9").toggleClass("m12");
+  $("#container").toggleClass("m12").toggleClass("m9");
   $("#sidebar").toggle();
   $container.packery();
 };
@@ -12,5 +12,7 @@ FolioView.prototype.toggleSidebar = function() {
 FolioView.prototype.showSidebar = function() {
   if ($("#container").hasClass("m12")) {
     folioView.toggleSidebar();
+    }
   }
-}
+
+

@@ -1,4 +1,7 @@
-<%= form_for([@folio, @element], multipart: true) do |f| %>
+<%= form_for([@folio, @element], multipart: true, method: "post") do |f| %>
+
+<h5 id="form-title">Add an element to your folio</h5>
+
   <% if @element.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
@@ -29,18 +32,14 @@
   </div>
 
   <div class="field">
+    <%= select_tag(:font, options_for_select([['Sumana', 'sumana'], ['Raleway', 'raleway'], ['Share', 'share'],['Satisfy', 'satisfy'],['Droid Sans Mono', 'droid']])) %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :element_link %>
     <%= f.text_field :element_link %>
   </div>
-
-<!--   <div class="input-field col s12">
-    <%#radio_button_tag(:submission, "upload") %>
-    <%# label_tag(:submission_upload, "Upload a File") %>
-    <%# radio_button_tag(:submission, "url") %>
-    <%# label_tag(:submission_url, "Provide a Link") %>
-  </div> -->
-  <%#TODO: if/else controller action %>
-
 
     <div class="input-field">
       <%= f.label :image %><br>
@@ -56,6 +55,7 @@
       <%= f.label :audio %><br>
       <%= f.file_field :audio  %>
     </div>
+
 
 
   <div class="actions">

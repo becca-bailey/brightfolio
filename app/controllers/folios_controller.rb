@@ -1,8 +1,10 @@
 class FoliosController < ApplicationController
   before_action :set_folio, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+
 
   def index
-    @folios = Folio.all
+    @folios = current_user.folios.order("created_at DESC")
   end
 
   def show
@@ -11,24 +13,21 @@ class FoliosController < ApplicationController
     @folio = Folio.find(params[:id])
   end
 
-  # GET /folios/new
   def new
     @folio = Folio.new
   end
 
-  # GET /folios/1/edit
   def edit
   end
 
-  # POST /folios
-  # POST /folios.json
   def create
 
-    @folio = Folio.new(folio_params)
+    @folio = current_user.folios.new(folio_params)
+    @folios = current_user.folios.order("created_at DESC")
 
     respond_to do |format|
       if @folio.save
-        format.html { redirect_to @folio, notice: 'Folio was successfully created.' }
+        format.html { redirect_to folio_elements_path(@folio), notice: 'Folio was successfully created.' }
         format.json { render :show, status: :created, location: @folio }
       else
         format.html { render :new }
@@ -40,9 +39,10 @@ class FoliosController < ApplicationController
   # PATCH/PUT /folios/1
   # PATCH/PUT /folios/1.json
   def update
+    @folios = current_user.folios.order("created_at DESC")
     respond_to do |format|
       if @folio.update(folio_params)
-        format.html { redirect_to @folio, notice: 'Folio was successfully updated.' }
+        format.html { redirect_to folios_path, notice: 'Folio was successfully updated.' }
         format.json { render :show, status: :ok, location: @folio }
       else
         format.html { render :edit }

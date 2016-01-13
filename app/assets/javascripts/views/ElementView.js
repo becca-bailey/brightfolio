@@ -48,7 +48,6 @@ ElementView.prototype.hideIcons = function() {
 };
 
 ElementView.prototype.showIcons = function(elm_id) {
-  console.log("showing icons");
   $("#" + elm_id + ">.delete").show();
   $("#" + elm_id + ">.done").show();
 };

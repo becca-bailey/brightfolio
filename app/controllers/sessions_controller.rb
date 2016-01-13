@@ -14,18 +14,18 @@ class SessionsController < ApplicationController
     end
   end
 
-  def facebook_create
+  def auth_create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to root_url
   end
 
 
-   def twitter_create
-    user = User.from_omniauth(env["omniauth.auth"])
-    session[:user_id] = user.id
-    redirect_to root_url
-  end
+  #  def twitter_create
+  #   user = User.from_omniauth(env["omniauth.auth"])
+  #   session[:user_id] = user.id
+  #   redirect_to root_url
+  # end
 
 
   def destroy

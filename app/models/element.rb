@@ -20,7 +20,6 @@ class Element < ActiveRecord::Base
    validates_attachment_content_type :audio, :content_type => [ 'audio/mp3','audio/mpeg']
 
 
-
   def any_present?
 
     if %w(title image element.document? audio element_link description).all?{|attr| self[attr].blank?}

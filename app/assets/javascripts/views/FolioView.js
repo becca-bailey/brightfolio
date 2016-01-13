@@ -12,7 +12,5 @@ FolioView.prototype.toggleSidebar = function() {
 FolioView.prototype.showSidebar = function() {
   if ($("#container").hasClass("m12")) {
     folioView.toggleSidebar();
-    }
   }
-
-
+};

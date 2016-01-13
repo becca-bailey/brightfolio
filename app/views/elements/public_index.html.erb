@@ -1,0 +1,20 @@
+<div class="folio">
+
+  <div class="container clearfix">
+  <% #TODO: Title alsways shows up as title of first folio %>
+    <h1 class="header"><%= @folio.title %></h1>
+    <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
+    <p id="notice"><%= notice %></p>
+
+    <i id="packery-toggle" class="material-icons">view_quilt</i>
+    <div class="row">
+      <div class="col s12 m12 elements" id="container">
+        <% if @elements %>
+          <% @elements.each do |element| %>
+            <%= render "elements/element", element: element %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

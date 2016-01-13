@@ -43,16 +43,19 @@
 
     <div class="input-field">
       <%= f.label :image %><br>
-      <%= f.file_field :image, class: :"input[type='button']"  %>
+      <%= f.file_field :image%>
     </div>
 
-    <div>
-      <%= f.label :file %><br>
-      <%= f.file_field :file  %>
+     <div class="input_field">
+      <%= f.label :document %><br>
+      <%= f.file_field :document  %>
     </div>
 
+    <div class="input_field">
+      <%= f.label :audio %><br>
+      <%= f.file_field :audio  %>
+    </div>
 
-<% #TODO link_to "Delete", { action: :destroy, id: folio_element.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
   <div class="actions">

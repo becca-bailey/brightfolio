@@ -1,9 +1,9 @@
-<div class="element card" id=<%= element.id %>>
+<div class="element card" id="<%= element.id %>">
   <i class="material-icons delete">close</i>
   <i class="material-icons done">done</i>
   <% if element.image.file? %>
 		<div class="card-image"><%= image_tag element.image.url %>
-        <%= image_tag @element.image.url(:thumb)%>
+
     </div>
   <% end %>
   <div class="title"><%= element.title %></div>

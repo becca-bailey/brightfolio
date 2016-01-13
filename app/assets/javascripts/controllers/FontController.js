@@ -21,7 +21,7 @@ function get(fontKey) {
     if (!document.getElementById(cssId))
     {
       var head = document.getElementsByTagName('head')[0];
-      debugger
+      // debugger
       var link = document.createElement('link');
       link.id = cssId;
       link.rel = 'stylesheet';
@@ -29,7 +29,7 @@ function get(fontKey) {
       link.href = fontUrl;
       link.media = 'all';
       head.appendChild(link);
-      debugger
+      // debugger
     }
   });
 }

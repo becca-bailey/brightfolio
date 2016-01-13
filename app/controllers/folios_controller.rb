@@ -4,16 +4,16 @@ class FoliosController < ApplicationController
   # GET /folios
   # GET /folios.json
   def index
-    @folios = Folio.all
+    @folios = current_user.folios.order("created_at DESC")
   end
 
   # GET /folios/1
   # GET /folios/1.json
-  def show
-    @folio = Folio.find(params[:id])
-    @element = Element.new
-    @elements = @folio.elements.order("created_at DESC")
-  end
+  # def show
+  #   @folio = Folio.find(params[:id])
+  #   @element = Element.new
+  #   @elements = @folio.elements.order("created_at DESC")
+  # end
 
   # GET /folios/new
   def new
@@ -28,11 +28,12 @@ class FoliosController < ApplicationController
   # POST /folios.json
   def create
 
-    @folio = Folio.new(folio_params)
+    @folio = current_user.folios.new(folio_params)
+    @folios = current_user.folios.order("created_at DESC")
 
     respond_to do |format|
       if @folio.save
-        format.html { redirect_to @folio, notice: 'Folio was successfully created.' }
+        format.html { redirect_to folio_elements_path(@folio), notice: 'Folio was successfully created.' }
         format.json { render :show, status: :created, location: @folio }
       else
         format.html { render :new }
@@ -44,9 +45,10 @@ class FoliosController < ApplicationController
   # PATCH/PUT /folios/1
   # PATCH/PUT /folios/1.json
   def update
+    @folios = current_user.folios.order("created_at DESC")
     respond_to do |format|
       if @folio.update(folio_params)
-        format.html { redirect_to @folio, notice: 'Folio was successfully updated.' }
+        format.html { redirect_to folios_path, notice: 'Folio was successfully updated.' }
         format.json { render :show, status: :ok, location: @folio }
       else
         format.html { render :edit }

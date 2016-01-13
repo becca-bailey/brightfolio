@@ -1,5 +1,6 @@
 $(document).ready(function() {
   clickToEdit();
+  clickPublic();
 });
 
 function clickToEdit() {
@@ -13,8 +14,17 @@ function clickToEdit() {
     $(this).addClass("editing");
     elementView.showIcons(elm_id);
     $("#form-title").text("Edit your element");
-
+    edit(elm_id);
     // update(elm_id);
+  });
+}
+
+function clickPublic() {
+  $("#container").on("dblclick", ".element-public", function() {
+    var elementView = new ElementView();
+    var elm_id = $(this).attr("id");
+    elementView.hideIcons();
+    elementView.showIcons(elm_id);
   });
 }
 
@@ -52,12 +62,18 @@ function update(elm_id) {
 function changeFormMethod(elm_id) {
   var formAction = "/folios/" + REGISTRY.folio_id + "/elements/" + elm_id;
   $("#new_element").attr("action", formAction );
-  $("#new_element").prepend("<input id='put' type='hidden' name='_method' value='put' />");
+  hiddenInput = document.createElement("input");
+  hiddenInput.type="hidden";
+  hiddenInput.name="_method";
+  hiddenInput.value="put";
+  hiddenInput.id="hidden_input";
+  $("#hidden_input").remove();
+  $("#new_element").prepend(hiddenInput);
 }
 
 
 function revertFormMethod() {
   var formAction = "/folios/" + REGISTRY.folio_id + "/elements";
   $("#new_element").attr("action", formAction );
-  $("#new_element").remove("#put");
+  $("#hidden_input").remove();
 }

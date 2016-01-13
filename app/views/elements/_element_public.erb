@@ -1,11 +1,9 @@
-<div id=<%= element.id %> class="element card freeform <%= element.font %> <%= element.width %>">
-  <i class="material-icons delete">close</i>
-  <i class="material-icons done">done</i>
+<div id="<%= element.id %>" class="element-public card freeform <%= element.font %> <%= element.width %>">
+  <i class="material-icons hide">close</i>
 
   <% if element.image.file? %>
-    <div class="card-image"><%= link_to element.image.url do %>
-        <%= image_tag element.image.url %>
-      <% end %>
+    <div class="card-image">
+        <%= image_tag element.image.url, class: "materialboxed" %>
     <% if element.element_link.empty?%>
     <% else %>
       <%= link_to element.element_link, class: 'right' do %>

@@ -1,10 +1,10 @@
-.element {
+.element, .element-public {
   width: 200px;
 }
-.element.w2 {
+.element.w2, .element-public.w2 {
    width: 410px;
  }
- .element.w3 {
+ .element.w3, .element-public.w3 {
    width: 620px;
  }
 

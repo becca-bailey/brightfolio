@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160109221049) do
     t.string   "description"
     t.string   "citation"
     t.string   "element_link"
+    t.string   "font"
+
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"

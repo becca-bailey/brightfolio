@@ -6,6 +6,7 @@ class CreateElements < ActiveRecord::Migration
       t.string :description
       t.string :citation
       t.string :element_link
+      t.string :font
 
       t.timestamps null: false
     end

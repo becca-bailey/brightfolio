@@ -2,20 +2,11 @@
 
 <h5 id="form-title">Add an element to your folio</h5>
 
-  <% if @element.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
-
-      <ul>
-      <% @element.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render "elements/errors"  %>
+  
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
 
-  <ul class="collapsible popout" data-collapsible="accordion">
+  <ul class="collapsible active" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">library_add</i>Title</div>
       <div class="collapsible-body">

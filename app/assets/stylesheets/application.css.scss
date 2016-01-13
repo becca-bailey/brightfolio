@@ -67,21 +67,28 @@ background-color: #ffffff;
   color: #F9B029;
 }
 
+.card {
+  /*background-color: #000000;*/
+}
+
 .title {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
-  background-color: #000000;
+  /*background-color: #ffffff;*/
   color: teal;
   text-align: center;
-  padding: 8%;
+  padding: 5%;
   line-height: 16px;
   letter-spacing: 1px;
+  /*margin-top: -30px;*/
 }
 
 .description {
-  padding: 8%;
-  line-height: 18px;
-  text-align: left-justify;
+  padding: 3% 4% 3% 4%;
+  line-height: 10px;
+  text-align: center;
+  color: white;
+  background-color: black;
 }
 
 /*icons*/
@@ -109,6 +116,9 @@ background-color: #ffffff;
 
 .primary-img {
   width: 100%;
+}
+.card_img {
+  box-shadow: 0;
 }
 
 /* =Top Bar
@@ -150,12 +160,22 @@ background-color: #ffffff;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
+  margin: 0 auto;
+  width: 80%;
+  border: 2px solid #FF2626;
+  padding: 0 3%;
   padding-bottom: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1%;
   background-color: #f0f0f0;}
+
+  #error_explanation h5 {
+  color: #FF2626;}
+
+  #error_explanation ul li {
+  color: #242424;
+  font-size: 14px;
+  line-height: 16px;
+}
 
 /* text */
 /* five possible fonts for drop down */
@@ -194,7 +214,19 @@ h1.header {
   margin-left: 5%;
   border: 1pt solid #18A89D;
   margin-bottom: -3%;
+}
 
+h5 {
+  font-size: 16px;
+}
+
+#form-title {
+  margin: 0 auto;
+  padding: 3%;
+  color: #4D4D4D;
+  /*font-style: italic;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .main {
@@ -406,3 +438,37 @@ body { font-family: sans-serif; }
   width: 100%;
   height: 90px;
 }*/
+
+
+nput:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea.materialize-textarea {
+
+  // General Styles
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all .3s;
+      -webkit-appearance: none;
+    margin: 0;
+
+}

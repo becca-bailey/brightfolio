@@ -13,8 +13,6 @@ function clickToEdit() {
     $(this).addClass("editing");
     elementView.showIcons(elm_id);
     $("#form-title").text("Edit your element");
-    $("#" + elm_id + ">.delete").show();
-    $("#" + elm_id + ">.done").show();
 
     // update(elm_id);
   });

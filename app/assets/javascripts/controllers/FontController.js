@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function changeFont() {
-  var fontKey = "AIzaSyBHLUAMYL1z9Jgzx5kvhHEofbdSWoyOVSo"
+  var fontKey =
   get(fontKey);
 }
 

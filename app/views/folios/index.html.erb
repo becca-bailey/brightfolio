@@ -1,44 +1,10 @@
 <div class="folio">
   <p id="notice"><%= notice %></p>
 
-  <div class="row">
-    <div class="col s12 m6">
-    <div class="folio_card">
-    <% @folios.each do |folio| %>
-      <ul class="collapsible" data-collapsible="expandable">
-        <li>
-          <div class="collapsible-header active title"><h2 class="center"><%= link_to folio.title, folio %></h2></div>
-          <!-- <div class="responsive-img"><%= image_tag("primary-img", class: "responsive-img") %></div> -->
-        </li>
-
-        <li>
-          <div class="collapsible-header ch2 no-bottom valign-wrapper"><i class="material-icons drop">arrow_drop_down</i><p><%= folio.description %></p></div>
-          <div class="collapsible-body center"><%= link_to 'Show', folio %></div>
-          <div class="collapsible-body center"><%= link_to 'Edit', edit_folio_path(folio) %></div>
-          <div class="collapsible-body center"><%= link_to 'Destroy', folio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        </li>
-
-
-      </ul>
-    <% end %>
-    </div>
-  </div>
+<div class="packery">
+  <div class="item"><%= render 'foliocard' %></div>
+  <div class="item"><%= render 'new' %></div>
 </div>
-  <div class="row">
-    <div class="col s12 m6">
-      <ul class="collapsible" data-collapsible="expandable">
-        <li>
-          <div class="collapsible-header center active no-bottom"><%= link_to 'New Folio', new_folio_path %><i class="fa fa-plus fa-lg center"></i></div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  </div>
-
-  <% #TODO render 'elements/show', element: element%>
-  <div class="col s12 m4" id="sidebar">
-    <%= render 'users/show' %>
-  </div>
 
 </div>
-</div>
+

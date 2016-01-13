@@ -3,14 +3,22 @@
 <% if current_user == nil %>
   <h1 class="center">Welcome</h1>
   <div class="user_basics center">
-    <%= link_to 'Register', new_user_path, class: 'btn-large waves-effect waves-light' %>
-    <%= link_to 'Login', login_path, class: 'btn-large waves-effect waves-light' %>
+    <%= link_to 'Register', new_user_path, class: 'btn-large waves-effect waves-light block' %>
+    <%= link_to 'Login', login_path, class: 'btn-large waves-effect waves-light block' %>
   </div>
 <% end %>
 
 <div class="container">
   <h5 class="gray-text">Why BrightFolio?</h5>
   <p class="grey-text">Monocle ipsum dolor sit amet ettinger Melbourne intricate, business class flat white signature the highest quality carefully curated concierge.</p>
+</div>
+
+<div class="container">
+  <h5 class="gray-text">Glossay/Key/Guide</h5>
+  <p class="grey-text">We wanted to keep the interface pretty clean, so when possible, we just used icons for control.</p>
+  <ul>
+    <li></li>
+  </ul>
 </div>
 
 <footer class="page-footer teal">

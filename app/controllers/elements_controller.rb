@@ -3,18 +3,17 @@ class ElementsController < ApplicationController
   before_action :authorize
 
   def index
-    @elements = Element.all
+    @folio = Folio.find(params[:folio_id])
+    @element = Element.new
+    @elements = @folio.elements.order("created_at DESC")
   end
 
-  def new
-    @element = Element.new
-  end
+  # def new
+  #   @element = Element.new
+  # end
 
   def edit
     @element = Element.find_or_initialize_by(id: params[:id])
-  end
-
-  def show
   end
 
   def create
@@ -24,24 +23,29 @@ class ElementsController < ApplicationController
     # p @element.font
     # p params[:font]
     @folio = Folio.find(params[:folio_id])
+    @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
       if @element.save
-        format.html { redirect_to @folio, notice: 'Element was successfully created.' }
+        format.html { redirect_to folio_elements_path, notice: 'Element was successfully created.' }
         format.json { render :show, status: :created, location: @folio }
       else
-        format.html { render :"folios/show" }
+        format.html { render :index  }
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
+    @element = Element.new(element_params)
+    @folio = Folio.find(params[:folio_id])
+    @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|
       if @element.update(element_params)
-        format.html { redirect_to @folio, notice: 'Element was successfully updated.' }
+        @folio = Folio.find(params[:folio_id])
+        format.html { redirect_to folio_elements_path, notice: 'Element was successfully updated.' }
         format.json { render :show, status: :ok, location: @folio }
       else
-        format.html { render :edit }
+        format.html { render :index }
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end

@@ -11,7 +11,7 @@ class Element < ActiveRecord::Base
 
   def any_present?
     if %w(title image element_link description).all?{|attr| self[attr].blank?}
-    errors.add :base, "Error message"
+    errors.add :base, "You must include at least one field for this element."
     end
   end
 

@@ -15,7 +15,7 @@
   <% end %>
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
 
-  <ul class="collapsible popout" data-collapsible="accordion">
+  <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">library_add</i>Title</div>
       <div class="collapsible-body">
@@ -52,15 +52,37 @@
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">note_add</i>File</div>
+      <div class="collapsible-header"><i class="material-icons">note_add</i>Document</div>
       <div class="collapsible-body">
         <div>
-          <%= f.file_field :file  %>
+          <p>Upload a .pdf, .doc, or docx</p>
+          <%= f.file_field :document  %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">library_music</i>Audio</div>
+      <div class="collapsible-body">
+        <div>
+          <p>Upload an .mp3 or .mpeg</p>
+            <%= f.file_field :audio, label: 'Upload Attachment', class: "hidden" %>
         </div>
       </div>
     </li>
   </ul>
-
+  <div class="width">
+    <p>
+      Width
+    </p>
+    <p>
+      <input name="width" type="radio" id="width1" value="w1" checked />
+      <label for="width1">1</label>
+    </p>
+    <p>
+      <input name="width" type="radio" id="width2" value="w2" />
+      <label for="width2">2</label>
+    </p>
+  </div>
   <div class="actions">
     <%= f.submit "Submit", class: :"waves-effect waves-light btn"  %>
   </div>

@@ -19,6 +19,7 @@ class ElementsController < ApplicationController
   def create
 
     @element = Element.new(element_params)
+    @element.format_link
 
     @folio = Folio.find(params[:folio_id])
     respond_to do |format|
@@ -30,6 +31,8 @@ class ElementsController < ApplicationController
         format.json { render json: @element.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
 
   def update

@@ -1,14 +1,10 @@
 class FoliosController < ApplicationController
   before_action :set_folio, only: [:show, :edit, :update, :destroy]
 
-  # GET /folios
-  # GET /folios.json
   def index
     @folios = Folio.all
   end
 
-  # GET /folios/1
-  # GET /folios/1.json
   def show
     @element = Element.new
     @elements = @folio.elements.order("created_at DESC")

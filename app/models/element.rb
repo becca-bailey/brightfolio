@@ -1,4 +1,5 @@
 class Element < ActiveRecord::Base
+
   belongs_to :folio
   validate :any_present?
   has_attached_file :image,
@@ -10,14 +11,14 @@ class Element < ActiveRecord::Base
 
    has_attached_file :document
    has_attached_file :audio
-   has_attached_file :link
+
+
 
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
    validates_attachment :document, content_type: { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
    validates_attachment_content_type :audio, :content_type => [ 'audio/mp3','audio/mpeg']
 
-   validates_attachment_content_type :link.format_link
 
 
   def any_present?
@@ -27,10 +28,13 @@ class Element < ActiveRecord::Base
   end
 
   def format_link
-    if /\Ahttp:\/\//
-    elsif /\Ahttps:\/\//
-    else
-      element_link = "http://" + element.element_link
+    # is called in elements_controller
+
+    unless self.element_link.match(/\Ahttp:\/\/www./) || self.element_link.match(/\Ahttps:\/\/www./)
+      # self.element_link = "http://" + self.element_link
+      self.element_link = "http://www." + self.element_link
+    end
+
   end
 
 

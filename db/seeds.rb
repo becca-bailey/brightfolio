@@ -4,7 +4,7 @@ require 'faker'
 becca = User.find(1)
 10.times do
   folio = becca.folios.create!(title: Faker::Hacker.adjective)
-  20.times do
-    element = folio.elements.create!(title: Faker::Hipster.sentence, element_link: Faker::Internet.url, description: Faker::Hipster.paragraph)
+  10.times do
+    element = folio.elements.create!(title: Faker::Hipster.words(4), element_link: Faker::Internet.url, description: Faker::Hipster.sentence)
   end
 end

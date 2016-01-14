@@ -1,7 +1,9 @@
 describe("Folio page layout", function() {
 
   it("changes the width of the container when 'add element' is clicked", function() {
-    $('#add-element').trigger('click');
+    var spyEvent = spyOnEvent('#add-element', 'click');
+    $("#add-element").click();
+    expect('click').toHaveBeenTriggeredOn('#add-element');
     expect( $('#container')).toHaveClass("m9");
   });
   it("hides the page sidebar on load", function() {
@@ -9,3 +11,14 @@ describe("Folio page layout", function() {
   });
 
 });
+//
+// describe("Element layout", function() {
+//   it("shows the 'delete' and 'done editing' buttons on double click", function() {
+//     // var spyEvent = spyOnEvent('.element', 'dblclick');
+//     // $(".element").dblclick();
+//     // expect('dblclick').toHaveBeenTriggeredOn('.element');
+//     // expect( $(".delete")).toBeVisible();
+//     // expect( $(".hide")).toBeVisible();
+//     expect($('.element')).toBeInDOM();
+//   });
+// });

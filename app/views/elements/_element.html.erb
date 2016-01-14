@@ -1,4 +1,5 @@
 <div id=<%= element.id %> class="element card modular <%= element.font %> <%= element.width %>">
+​
   <i class="material-icons delete">remove_circle</i>
   <i class="material-icons done">check_circle</i>
 ​
@@ -17,12 +18,13 @@
          <a href="<%=element.element_link%>"></a>
        <% end %>
     <% end %>
-​
+
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
   <% end %>
-  
+
+
   <%if element.document.file? %>
     <div class="card-image">
       <%= link_to element.document.url, :target => '_blank' do %>
@@ -44,7 +46,6 @@
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
-​
   <% end %>
 ​
   <% if element.audio.file? %>
@@ -69,9 +70,11 @@
     <% end %>
   <% end %>
 ​
+
+  <!-- Just a note -->
+
   <% if element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
     <div class="card-image">
-    </div>
     <% if element.title %>
       <div class="title"><%= element.title %></div>
     <% end %>
@@ -79,12 +82,22 @@
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
+    </div>
   <% end %>
 ​
-  <% if !element.image? && !element.document? && !element.audio? %>
+  <!-- Link -->
+  <% if !element.image? && !element.document? && !element.audio? && element.element_link.present?%>
     <div class="card-image">
     <%#=# link_to element.element_link, :target => '_blank' do %>
       <%= image_tag ("internet-globe.png") %>
+    <% if element.title %>
+      <div class="title"><%= element.title %></div>
+    <% end %>
+​
+    <% if element.description %>
+      <div class="description"><%= element.description %></div>
+    <% end %>
+
     <%# end %>
     </div>
     <% if element.element_link.empty?%>
@@ -94,13 +107,6 @@
         <a href="<%=element.element_link%>"></a>
       <% end %>
     <% end %>
-​
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
-​
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
   <% end %>
+
 </div>

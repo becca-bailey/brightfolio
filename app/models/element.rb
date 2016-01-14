@@ -26,7 +26,7 @@ class Element < ActiveRecord::Base
     end
   end
 
-private
+# private
   def format_link
   #   # is called in elements_controller
 
@@ -49,4 +49,3 @@ private
 
 
 end
-

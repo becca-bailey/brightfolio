@@ -1,6 +1,7 @@
 // Place all the styles related to the folios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #tabs {
   position: fixed;
   bottom: 0;
@@ -10,7 +11,7 @@
 
 .delete,
 .done,
-.hide{
+.hide_element{
   opacity: .8;
   position: absolute;
   right: 5px;
@@ -21,7 +22,7 @@
   }
 }
 
-.delete, .hide {
+.delete, .hide_element {
   top: 5px;
   color: red;
 }

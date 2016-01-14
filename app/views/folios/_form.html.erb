@@ -1,14 +1,10 @@
-<%= form_for(@folio) do |f| %>
-<!-- <%= render "errors"  %> -->
+<%= form_for :folio do |f| %>
 
-<div class="field hide">
-  <%= f.label :user_id %><br>
-  <%= f.number_field :user_id %>
-</div>
+
 
 <ul class="collapsible popout" data-collapsible="accordion">
   <li>
-    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Title</div>
+    <div class="collapsible-header"><i class="material-icons">stars</i><p class="icon-label">Title</p></div>
     <div class="collapsible-body">
       <div class="field">
         <%= f.text_field :title %>
@@ -16,22 +12,16 @@
     </div>
   </li>
   <li>
-    <div class="collapsible-header"><i class="material-icons">Text</i>Second</div>
+    <div class="collapsible-header"><i class="material-icons">star_rate</i><p class="icon-label">Description</p></div>
     <div class="collapsible-body">
       <div class="field">
-        <%= f.text_area :description %>
+        <%= f.text_area :description, class: "materialize-textarea" %>
       </div>
     </div>
   </li>
-  <li>
-    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
 </ul>
 
-  <%= f.label :description %><br>
-
 <div class="actions">
-  <%= f.submit "Submit", class: :"waves-effect waves-light btn"  %>
+  <%= f.submit "Submit", class: :"waves-effect waves-light btn right"  %>
 </div>
 <% end %>

@@ -1,5 +1,4 @@
 class Element < ActiveRecord::Base
-
   belongs_to :folio
   # validate :any_present?
   has_attached_file :image,
@@ -39,7 +38,6 @@ class Element < ActiveRecord::Base
         self.element_link = "http://www." + self.element_link
       end
   end
-
   #   unless self.element_link.match(/\Ahttp:\/\/www./) || self.element_link.match(/\Ahttps:\/\/www./)
   #     # self.element_link = "http://" + self.element_link
   #     self.element_link = "http://www." + self.element_link

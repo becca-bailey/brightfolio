@@ -1,8 +1,12 @@
 <div id=<%= element.id %> class="element card modular <%= element.font %> <%= element.width %>">
-  <i class="material-icons delete">close</i>
-  <i class="material-icons done">done</i>
-
+  <i class="material-icons delete">remove_circle</i>
+  <i class="material-icons done">check_circle</i>
+​
+ <!-- image -->
   <% if element.image.file? %>
+  <% if element.title %>
+      <div class="title"><%= element.title %></div>
+    <% end %>
     <div class="card-image">
       <%= image_tag element.image.url, class: "materialboxed" %>
     </div>
@@ -13,11 +17,7 @@
          <a href="<%=element.element_link%>"></a>
        <% end %>
     <% end %>
-
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
-
+​
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
@@ -36,17 +36,17 @@
         <a href="<%=element.element_link%>"></a>
       <% end %>
     <% end %>
-
+​
     <% if element.title %>
       <div class="title"><%= element.title %></div>
     <% end %>
-
+​
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
-
+​
   <% end %>
-
+​
   <% if element.audio.file? %>
     <div class="card-image">
       <%= link_to element.audio.url, :target => '_blank' do %>
@@ -63,28 +63,28 @@
     <% if element.title %>
       <div class="title"><%= element.title %></div>
     <% end %>
-
+​
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
   <% end %>
-
+​
   <% if element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
     <div class="card-image">
     </div>
     <% if element.title %>
       <div class="title"><%= element.title %></div>
     <% end %>
-
+​
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>
   <% end %>
-
+​
   <% if !element.image? && !element.document? && !element.audio? %>
     <div class="card-image">
     <%#=# link_to element.element_link, :target => '_blank' do %>
-      <%= image_tag ("internet-globe.jpg") %>
+      <%= image_tag ("internet-globe.png") %>
     <%# end %>
     </div>
     <% if element.element_link.empty?%>
@@ -94,11 +94,11 @@
         <a href="<%=element.element_link%>"></a>
       <% end %>
     <% end %>
-
+​
     <% if element.title %>
       <div class="title"><%= element.title %></div>
     <% end %>
-
+​
     <% if element.description %>
       <div class="description"><%= element.description %></div>
     <% end %>

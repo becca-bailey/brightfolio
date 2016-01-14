@@ -9,7 +9,7 @@ class Element < ActiveRecord::Base
      medium: '300x300>'
     }
 
-   has_attached_file :document, styles: {thumbnail: ["200x200#", :png]}
+   has_attached_file :document
    has_attached_file :audio
 
 
@@ -22,7 +22,7 @@ class Element < ActiveRecord::Base
   def any_present?
 
     if %w(title image document audio element_link description).all?{|attr| self[attr].blank?}
-    errors.add :base, "You must include at least one field for this element."
+    errors.add :base, "Please include at least one field to create an element."
     end
   end
 

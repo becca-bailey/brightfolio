@@ -11,7 +11,7 @@
 
 .delete,
 .done,
-.hide{
+.hide_element{
   opacity: .8;
   position: absolute;
   right: 5px;
@@ -22,7 +22,7 @@
   }
 }
 
-.delete, .hide {
+.delete, .hide_element {
   top: 5px;
   color: red;
 }

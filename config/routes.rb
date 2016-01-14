@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
 
-  get 'auth/:provider/callback' => 'sessions#facebook_create'
-  post 'auth/:provider/callback' => 'sessions#facebook_create'
+  get 'auth/:provider/callback' => 'sessions#auth_create'
+  post 'auth/:provider/callback' => 'sessions#auth_create'
+
+  # get 'auth/:provider/callback' => 'sessions#twitter_create'
+  # post 'auth/:provider/callback' => 'sessions#twitter_create'
 
   delete "logout" => "sessions#destroy"
   get 'logout' => 'sessions#destroy'

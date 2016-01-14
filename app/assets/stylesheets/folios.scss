@@ -8,7 +8,9 @@
   right: 0;
 }
 
-.delete, .done {
+.delete,
+.done,
+.hide{
   opacity: .8;
   position: absolute;
   right: 5px;
@@ -19,9 +21,9 @@
   }
 }
 
-.delete {
+.delete, .hide {
   top: 5px;
-  color: white;
+  color: red;
 }
 
 .done {

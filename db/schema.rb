@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20160112152323) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",       null: false
-    t.string   "last_name",        null: false
-    t.string   "email",            null: false
-    t.string   "password_digest",  null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.string   "bio"
     t.string   "facebook_link"
     t.string   "twitter_link"
@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.string   "link_2"
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false

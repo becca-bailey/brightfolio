@@ -51,6 +51,7 @@ class ElementsController < ApplicationController
 
   def update
     @element.font = params[:font]
+    @element.width = params[:width]
     @folio = Folio.find(params[:folio_id])
     @elements = @folio.elements.order("created_at DESC")
     respond_to do |format|

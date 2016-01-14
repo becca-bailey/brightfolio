@@ -2,19 +2,24 @@
 
   <div class="container clearfix">
   <% #TODO: Title alsways shows up as title of first folio %>
-    <div class="top-bar">
-
+    <header>
       <h1 class="header"><%= @folio.title %></h1>
-        <div class="icons">
+      <div class="row">
+        <aside class="icons col m3 right">
           <a class="modal-trigger tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Share" href="#modal2"><i class="medium material-icons">launch</i></a>
-          <%= link_to folio_elements_path(@folio, mood_board: true) do %>
-            <i class="medium material-icons tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Mood Board">view_quilt</i>
+          <%= link_to folio_elements_path(@folio, mood_board: true), class: :"btn-floating" do %>
+            <i class="medium material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mood Board">view_quilt</i>
           <% end %>
-          <a id="add-element" class="tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Toggle Controls" href=#><i class="medium material-icons">create</i></a>
-        </div>
-    </div>
+          <a id="add-element" class="tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Toggle Controls" href=#><i class="medium material-icons">visibility</i></a>
+        </aside>
+      </div>
+      <div class="row">
+  <!--       <aside class="icons col m3">
+          <p id="notice"><%= notice %></p>
+        </aside> -->
+      </div>
     <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
-    <p id="notice"><%= notice %></p>
+    </header>
 
     <div class="row">
       <div class="col s12 m9 elements" id="container">
@@ -25,7 +30,7 @@
         <% end %>
       </div>
 
-      <div class="col s12 m3" id="sidebar">
+      <div class="col s12 m3 right" id="sidebar">
         <%= render "form"  %>
       </div>
 

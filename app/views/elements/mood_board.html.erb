@@ -4,12 +4,12 @@
   <% #TODO: Title alsways shows up as title of first folio %>
     <div class="top-bar">
       <h1 class="header"><%= @folio.title %></h1>
-      <%= link_to folio_elements_path(@folio) do %>
+      <%= link_to folio_elements_path(@folio), class: :"btn-floating waves-effect waves-light" do %>
         <i class="medium material-icons">chevron_left</i>
       <% end %>
     </div>
     <script>REGISTRY = { folio_id: "<%= @folio.id %>" } </script>
-    <p id="notice"><%= notice %></p>
+    <!-- <p id="notice"><%= notice %></p> -->
 
     <div class="col s12 m12" id="container">
       <% if @elements %>

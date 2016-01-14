@@ -16,6 +16,8 @@
 //= require materialize-sprockets
 //= require draggabilly.pkgd.min
 //= require_tree .
+
+
 $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,

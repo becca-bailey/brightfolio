@@ -69,6 +69,7 @@
     <% end %>
   <% end %>
 ​
+  <!-- Just a note -->
   <% if element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
     <div class="card-image">
     </div>
@@ -81,7 +82,8 @@
     <% end %>
   <% end %>
 ​
-  <% if !element.image? && !element.document? && !element.audio? %>
+  <!-- Link -->
+  <% if !element.image? && !element.document? && !element.audio? && element.element_link.present?%>
     <div class="card-image">
     <%#=# link_to element.element_link, :target => '_blank' do %>
       <%= image_tag ("internet-globe.jpg") %>

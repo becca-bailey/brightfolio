@@ -44,9 +44,29 @@ footer {
 }
 
 .folio {
-  background-color: #4D4D4D;
   height: 100%;
   padding: 2% .5%;
+}
+
+.folio_card {
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+#folio-page {
+  background-image: url("https://source.unsplash.com/random/1200x800");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#new-folio {
+  text-align: center;
+  width: 100%;
+  a {
+    color: white;
+    font-size: 1.5em;
+    width: 350px;
+  }
 }
 
 .container {
@@ -57,6 +77,13 @@ footer {
   background-color: #F2F2F2;
   border-radius: 30px;
   margin-top: 30px;
+}
+
+.folio {
+  padding: 1%;
+  width: 95%;
+  margin-top: 30px;
+  margin: 0 auto;
 }
 
 #container:after {
@@ -123,16 +150,23 @@ footer {
   background-color: teal;
   color: #fff;
   padding: .5%;
+  width: 100%;
 }
 
-.welcome a {
-  color: white;
-  /*display: inline-block;*/
-  font-size: .8em;
-  margin: 0 10px;
-  padding: .5%;
-  text-transform: uppercase;
-  letter-spacing: 10%;
+.welcome ul {
+  margin: 0;
+  li  {
+    display: inline;
+    a {
+      color: white;
+      /*display: inline-block;*/
+      font-size: .8em;
+      margin: 0 10px;
+      padding: .5%;
+      text-transform: uppercase;
+      letter-spacing: 10%;
+    }
+  }
 }
 
 /*errors*/
@@ -372,6 +406,11 @@ nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 }
 
 /* collapsible */
+
+#folio-page .collapsible-header {
+  background-color: rgba(255,255,255,.7)
+}
+
 .collapsible-header {
   margin: 0;
   line-height: 14pt;
@@ -404,6 +443,10 @@ padding: 0 10px;
 .collapsible-body p {
   margin: 0;
   /*padding: 2rem;*/
+}
+
+.collapsible-body {
+  background-color: white;
 }
 
 ul.collapsible {

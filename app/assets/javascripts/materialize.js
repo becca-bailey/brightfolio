@@ -1,7 +1,6 @@
 $(document).ready(function(){
+  $container = $("#container").packery();
   $('.collapsible').collapsible({
-    accordion : false
   });
   $('select').material_select();
 });
-

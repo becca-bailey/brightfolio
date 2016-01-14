@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $(".delete").hide();
-  $(".hide").hide();
+  $(".hide_element").hide();
   clickToDelete();
   clickToHide();
 });
@@ -23,7 +23,7 @@ function clickToDelete() {
 }
 
 function clickToHide() {
-  $(".hide").on("click", function() {
+  $(".hide_element").on("click", function() {
     var elm_id = $(this).parent().attr("id");
     var elementView = new ElementView();
     elementView.removeElement(elm_id);

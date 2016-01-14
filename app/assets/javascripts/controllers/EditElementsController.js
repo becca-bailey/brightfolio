@@ -7,6 +7,7 @@ function clickToEdit() {
   $("#container").on("dblclick", ".element", function() {
     var elementView = new ElementView();
     var elm_id = $(this).attr("id");
+    // growShrink("#" + elm_id);
     changeFormMethod(elm_id);
     elementView.hideIcons();
     folioView.showSidebar();
@@ -76,4 +77,20 @@ function revertFormMethod() {
   var formAction = "/folios/" + REGISTRY.folio_id + "/elements";
   $("#new_element").attr("action", formAction );
   $("#hidden_input").remove();
+}
+
+function growShrink(className) {
+  var current_h = $(className).height();
+  var current_w = $(className).width();
+  $(className).hover(function() {
+    $(this).stop(true, false).animate({
+      width: (current_w * 1.02),
+      height: (current_h * 1.02)
+    }, 200);
+  }, function() {
+    $(this).stop(true, false).animate({
+      width: current_w + 'px',
+      height: current_h + 'px'
+    }, 200);
+  });
 }

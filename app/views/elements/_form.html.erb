@@ -4,7 +4,9 @@
 <h5 id="form-title">Add an element to your folio</h5>
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
 
+
   <ul class="collapsible" data-collapsible="accordion">
+
     <li>
       <div class="collapsible-header"><i class="material-icons">library_add</i><p class="icon-label">Title</p></div>
       <div class="collapsible-body">
@@ -24,7 +26,7 @@
         </div>
       </div>
     </li>
-      <!-- <li class="divider"></li> -->
+
     <li>
       <div class="collapsible-header"><i class="material-icons">invert_colors</i><p class="icon-label">Color</p></div>
       <div class="collapsible-body">
@@ -68,6 +70,7 @@
         </div>
       </div>
     </li>
+
     <li>
       <div class="collapsible-header"><i class="material-icons">library_music</i><p class="icon-label">Audio</p></div>
       <div class="collapsible-body">

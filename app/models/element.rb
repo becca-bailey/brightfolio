@@ -9,7 +9,7 @@ class Element < ActiveRecord::Base
      medium: '300x300>'
     }
 
-   has_attached_file :document, styles: {thumbnail: ["200x200#", :png]}
+   has_attached_file :document
    has_attached_file :audio
 
 

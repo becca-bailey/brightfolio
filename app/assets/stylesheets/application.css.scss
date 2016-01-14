@@ -99,7 +99,7 @@ footer {
   height: 100%;
   background-color: #F2F2F2;
   border-radius: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .row {
@@ -269,7 +269,8 @@ pre {
 
 .alert {
   background-color: #242424;
-  padding: 0 20px;
+  padding-top: 10px;
+  padding-left: 30px;
 }
 .alert-info {
   color: #CAFEFB;
@@ -680,7 +681,7 @@ label {
   font-size: 16px;
 }
 
-#element_element_link, #element_title, input.select-dropdown, #user_last_name, #user_first_name, #user_email, #user_password, #user_bio {
+#element_element_link, #element_title, input.select-dropdown, #user_last_name, #user_first_name, #user_email, #user_password, #user_bio, input#session_email, input#session_password {
   /*padding: 0 5%;*/
   width: 95%;
   border-bottom: 2pt solid #107F80;
@@ -695,7 +696,7 @@ label {
 }
 
 /*#user_bio {
-  
+
 }#user_bio {
 
 }*/
@@ -714,8 +715,8 @@ background-color: teal;
 .input#element_title {
   color: white;
 }
-.select-dropdown {
-
+.dropdpwn-content {
+background-color: blue;
 }
 
 .mat-label {
@@ -778,6 +779,20 @@ background-color: teal;
   border: 3pt inset #FCBC34;
  }
 
- .is-active {
-    border: 3pt inset #FCBC34;
- }
+.is-active {
+    border: 3pt inset #FCBC34; }
+
+
+
+.backdrop {
+  background-color: #107F80;
+}
+
+
+.slider .indicators .indicator-item.active {
+    background-color: #FCBC34;
+}
+
+.indicators .indicator-item {
+    background-color: #107F80;
+}

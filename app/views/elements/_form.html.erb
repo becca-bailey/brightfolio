@@ -16,7 +16,7 @@
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">comment</i><p class="icon-label">Text</p></div>
+      <div class="collapsible-header"><i class="material-icons">comment</i><p class="icon-label">Note</p></div>
       <div class="collapsible-body">
         <div class="field">
           <%= f.text_area :description %>
@@ -28,10 +28,10 @@
     </li>
 
     <li>
-      <div class="collapsible-header"><i class="material-icons">invert_colors</i><p class="icon-label">Color</p></div>
+      <div class="collapsible-header"><i class="material-icons">invert_colors</i><p class="icon-label">Font Color</p></div>
       <div class="collapsible-body">
         <div class="input-field">
-          <%= select_tag(:font, options_for_select([["Black", 'black-font', {:div=>"color: #000000;"} ], ["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
+          <%= select_tag(:font, options_for_select([["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
                     ["Red", 'red-font', {:div=>"color: #FF0000;"}],["Orange", 'orange-font', {:div=>"color: #FFA500;"}],
                     ["Yellow", 'yellow-font', {:div=>"color: #FFFF00;"}],["Green", 'green-font', {:div=>"color: #008000;;"}],["Blue", 'blue-font', {:div=>"color: #0000FF;"}],["Indigo", 'indigo-font', {:div=>"color: #4B0082;"}],["Violet", 'violet-font', {:div=>"color: #800080;"}]])) %>
         </div>
@@ -52,7 +52,7 @@
           <%= f.file_field :image, class: :"input[type='button']"  %>
         </div>
     </li>
-    <li>             
+    <li>
       <div class="collapsible-header"><i class="material-icons">photo_size_select_small</i><p class="icon-label">Select image width</p></div>
             <div class="collapsible-body">
               <input name="width" type="radio" id="width1" value="w1" checked />

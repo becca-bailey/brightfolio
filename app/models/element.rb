@@ -29,16 +29,15 @@ class Element < ActiveRecord::Base
 # private
   def format_link
   #   # is called in elements_controller
-
-    if /^(http:\/\/www.|https:\/\/www.)/.match(self.element_link)
-      self.element_link
-    elsif /^(http:\/\/|https:\/\/)/.match(self.element_link) # elsif http://pepsi.com
-      self.element_link
-    elsif /^(www.)/.match(self.element_link) # elsif www.pepsi.com
-      self.element_link = "http://" + self.element_link
-    else # pepsi.com
-      self.element_link = "http://www." + self.element_link
-    end
+      if /^(http:\/\/www.|https:\/\/www.)/.match(self.element_link)
+        self.element_link
+      elsif /^(http:\/\/|https:\/\/)/.match(self.element_link) # elsif http://pepsi.com
+       self.element_link
+      elsif /^(www.)/.match(self.element_link) # elsif www.pepsi.com
+        self.element_link = "http://" + self.element_link
+      else # pepsi.com
+        self.element_link = "http://www." + self.element_link
+      end
   end
 
   #   unless self.element_link.match(/\Ahttp:\/\/www./) || self.element_link.match(/\Ahttps:\/\/www./)

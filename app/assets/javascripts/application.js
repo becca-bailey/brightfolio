@@ -16,6 +16,7 @@
 //= require materialize-sprockets
 //= require draggabilly.pkgd.min
 //= require_tree .
+
 $(document).ready(function() {
   $('.dropdown-button').dropdown({
     inDuration: 300,
@@ -29,3 +30,4 @@ $(document).ready(function() {
   $('.slider').slider({full_width: true});
 
 });
+

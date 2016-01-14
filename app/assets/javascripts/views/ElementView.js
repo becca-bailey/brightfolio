@@ -45,11 +45,11 @@ ElementView.prototype.removeEditClass = function() {
 ElementView.prototype.hideIcons = function() {
   $(".delete").hide();
   $(".done").hide();
-  $(".hide").hide();
+  $(".hide_element").hide();
 };
 
 ElementView.prototype.showIcons = function(elm_id) {
   $("#" + elm_id + ">.delete").show();
   $("#" + elm_id + ">.done").show();
-  $("#" + elm_id + ">.hide").show();
+  $("#" + elm_id + ">.hide_element").show();
 };

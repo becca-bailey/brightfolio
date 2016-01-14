@@ -1,25 +1,14 @@
+
 <%= form_for([@folio, @element], multipart: true, method: "post") do |f| %>
 
 <h5 id="form-title">Add an element to your folio</h5>
-
-  <% if @element.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
-
-      <ul>
-      <% @element.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <%= f.hidden_field :folio_id, :value => @folio.id, id: "id" %>
 
 
   <ul class="collapsible" data-collapsible="accordion">
 
     <li>
-      <div class="collapsible-header"><i class="material-icons">library_add</i>Title</div>
+      <div class="collapsible-header"><i class="material-icons">library_add</i><p class="icon-label">Title</p></div>
       <div class="collapsible-body">
         <div class="field">
           <%= f.text_field :title %>
@@ -27,7 +16,7 @@
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">comment</i>Text</div>
+      <div class="collapsible-header"><i class="material-icons">comment</i><p class="icon-label">Note</p></div>
       <div class="collapsible-body">
         <div class="field">
           <%= f.text_area :description %>
@@ -37,21 +26,19 @@
         </div>
       </div>
     </li>
+
     <li>
-      <div class="collapsible-header"><i class="material-icons">invert_colors</i>Color</div>
+      <div class="collapsible-header"><i class="material-icons">invert_colors</i><p class="icon-label">Font Color</p></div>
       <div class="collapsible-body">
-        <div class="field">
-          <%= f.text_area :font %>
-        </div>
         <div class="input-field">
-          <%= select_tag(:font, options_for_select([["Black", 'black-font', {:div=>"color: #000000;"} ], ["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
+          <%= select_tag(:font, options_for_select([["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
                     ["Red", 'red-font', {:div=>"color: #FF0000;"}],["Orange", 'orange-font', {:div=>"color: #FFA500;"}],
                     ["Yellow", 'yellow-font', {:div=>"color: #FFFF00;"}],["Green", 'green-font', {:div=>"color: #008000;;"}],["Blue", 'blue-font', {:div=>"color: #0000FF;"}],["Indigo", 'indigo-font', {:div=>"color: #4B0082;"}],["Violet", 'violet-font', {:div=>"color: #800080;"}]])) %>
         </div>
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">launch</i>Link</div>
+      <div class="collapsible-header"><i class="material-icons">launch</i><p class="icon-label">Link</p></div>
       <div class="collapsible-body">
         <div class="field">
           <%= f.text_field :element_link %>
@@ -59,16 +46,23 @@
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">picture_in_picture</i>Image</div>
+      <div class="collapsible-header"><i class="material-icons">image</i><p class="icon-label">Image</p></div>
       <div class="collapsible-body">
         <div class="input-field">
           <%= f.file_field :image, class: :"input[type='button']"  %>
         </div>
-      </div>
     </li>
     <li>
+      <div class="collapsible-header"><i class="material-icons">photo_size_select_small</i><p class="icon-label">Select image width</p></div>
+            <div class="collapsible-body">
+              <input name="width" type="radio" id="width1" value="w1" checked />
+              <label for="width1">1</label>
 
-      <div class="collapsible-header"><i class="material-icons">note_add</i>Document</div>
+              <input name="width" type="radio" id="width2" value="w2" />
+              <label for="width2">2</label>
+            </div> </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">note_add</i><p class="icon-label">Document</p></div>
       <div class="collapsible-body">
         <div>
           <p>Upload a .pdf, .doc, or docx</p>
@@ -76,17 +70,18 @@
         </div>
       </div>
     </li>
+
     <li>
-      <div class="collapsible-header"><i class="material-icons">library_music</i>Audio</div>
+      <div class="collapsible-header"><i class="material-icons">library_music</i><p class="icon-label">Audio</p></div>
       <div class="collapsible-body">
         <div>
           <p>Upload an .mp3 or .mpeg</p>
-            <%= f.file_field :audio, label: 'Upload Attachment', class: "hidden" %>
+            <%= f.file_field :audio, label: 'Upload Attachment' %>
         </div>
       </div>
     </li>
   </ul>
-  <div class="width">
+  <!-- <div class="width"><i class="material-icons">photo_size_select_small</i><p class="icon-label">Image</p>
     <p>
       Width
     </p>
@@ -98,7 +93,7 @@
       <input name="width" type="radio" id="width2" value="w2" />
       <label for="width2">2</label>
     </p>
-  </div>
+  </div> -->
   <div class="actions">
     <%= f.submit "Submit", class: :"waves-effect waves-light btn"  %>
   </div>

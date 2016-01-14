@@ -1,0 +1,8 @@
+<% if @element.errors.any? %>
+  <div class="alert alert-info">
+    <h5><%= pluralize(@element.errors.count, "error") %> prevented this element from being created:
+    <% @element.errors.full_messages.each do |message| %> 
+    <%= message %>
+    <% end %>    
+  </div>
+<% end %>

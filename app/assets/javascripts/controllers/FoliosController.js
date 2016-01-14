@@ -4,7 +4,9 @@ $(document).ready(function() {
     var containerView = new ContainerView();
     var $container = $("#container").packery();
     containerView.packery(".modular");
+    containerView.packery(".folio_card");
     containerView.modularDraggable(".modular");
+    containerView.modularDraggable(".folio_card");
     containerView.freeformDraggable(".freeform");
   });
 });

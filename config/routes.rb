@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :folios do
-    resources :elements
+  resources :folios, except: :show do
+    resources :elements, except: :show
   end
-
+# resources :books, except: :update
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"

@@ -30,7 +30,11 @@ class ElementsController < ApplicationController
   def create
     @element = Element.new(element_params)
 
-    @element.format_link
+    if @element.element_link.empty?
+      @element.element_link
+    else
+      @element.format_link
+    end
 
     @element.font = params[:font]
     @element.width = params[:width]

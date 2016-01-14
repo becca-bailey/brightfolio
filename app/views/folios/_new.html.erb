@@ -1,4 +1,10 @@
 
-		<div class="btn-large waves-effect waves-light'">
-		<%= link_to '<i class="material-icons">add_circle</i> New Folio'.html_safe, new_folio_path,(@user) %>
+		<a class="btn-large waves-effect waves-light modal-trigger" href="#new_folio"><i class="material-icons">add_circle</i> New Folio</a>
+		<!-- <%= link_to '<i class="material-icons">add_circle</i> New Folio'.html_safe, new_folio_path,(@user) %> -->
+		<div id="new_folio" class="modal">
+	    <div class="modal-content">
+	      <h4>Create your Folio</h4>
+	      	<%= render "form", locals: {folio: Folio.new} %>
+	    </div>
+	  </div>
 		</div>

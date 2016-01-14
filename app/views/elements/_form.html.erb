@@ -40,9 +40,6 @@
     <li>
       <div class="collapsible-header"><i class="material-icons">invert_colors</i>Color</div>
       <div class="collapsible-body">
-        <div class="field">
-          <%= f.text_area :font %>
-        </div>
         <div class="input-field">
           <%= select_tag(:font, options_for_select([["Black", 'black-font', {:div=>"color: #000000;"} ], ["Brown", 'brown-font', {:div=>"color: #A52A2A;"} ],
                     ["Red", 'red-font', {:div=>"color: #FF0000;"}],["Orange", 'orange-font', {:div=>"color: #FFA500;"}],

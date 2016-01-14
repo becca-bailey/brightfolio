@@ -1,0 +1,12 @@
+<div class="errors"><% if @folio.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@folio.errors.count, "error") %> prevented this element from being created:</h5>
+
+      <ul>
+      <% @folio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

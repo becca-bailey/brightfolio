@@ -6,11 +6,11 @@
       <h1 class="header"><%= @folio.title %></h1>
       <div class="row">
         <aside class="icons col m3 right">
-          <a class="modal-trigger tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Share" href="#modal2"><i class="medium material-icons">launch</i></a>
+          <a class="modal-trigger tooltipped btn-floating" data-position="top" data-delay="50" data-tooltip="Share" href="#modal2"><i class="medium material-icons">send</i></a>
           <%= link_to folio_elements_path(@folio, mood_board: true), class: :"btn-floating" do %>
-            <i class="medium material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mood Board">view_quilt</i>
+            <i class="medium material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Mood Board">view_quilt</i>
           <% end %>
-          <a id="add-element" class="tooltipped btn-floating" data-position="bottom" data-delay="50" data-tooltip="Toggle Controls" href=#><i class="medium material-icons">visibility</i></a>
+          <a id="add-element" class="tooltipped btn-floating" data-position="top" data-delay="50" data-tooltip="Toggle Controls" href=#><i class="medium material-icons">visibility</i></a>
         </aside>
       </div>
       <div class="row">

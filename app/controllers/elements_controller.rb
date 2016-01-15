@@ -1,6 +1,5 @@
 class ElementsController < ApplicationController
   before_action :set_element, only: [:show, :edit, :update, :destroy]
-
   before_action :authorize, except: :index
 
 
@@ -29,7 +28,6 @@ class ElementsController < ApplicationController
 
   def create
     @element = Element.new(element_params)
-
     if @element.element_link.empty?
       @element.element_link
     else

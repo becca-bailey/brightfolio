@@ -8,7 +8,7 @@
        <%= image_tag element.image.url, class: "materialboxed" %>
      </div>
      <% unless element.element_link.empty?%>
-       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
+       <%= link_to element.element_link, class: 'right element-link', :target => '_blank' do %>
           <i class="material-icons">link</i>
         <% end #link_to %>
      <% end #unless %>
@@ -24,7 +24,7 @@
        <% end #link_to %>
      </div>
      <% unless element.element_link.empty?%>
-       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
+       <%= link_to element.element_link, class: 'right element-link', :target => '_blank' do %>
          <i class="material-icons">link</i>
        <% end #link_to %>
      <% end #unless %>
@@ -40,7 +40,7 @@
        <% end #link_to %>
      </div>
      <% unless element.element_link.empty?%>
-       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
+       <%= link_to element.element_link, class: 'right element-link', :target => '_blank' do %>
          <i class="material-icons">link</i>
        <% end #link_to%>
      <% end #unless%>
@@ -62,7 +62,7 @@
      </div>
      <div class="description"><%= element.description %></div>
      <% unless element.element_link.empty?%>
-       <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
+       <%= link_to element.element_link, :target => "_blank", class: 'right element-link' do %>
          <i class="material-icons">link</i>
        <% end #link_to %>
      <% end #unless %>

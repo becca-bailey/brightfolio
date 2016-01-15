@@ -62,7 +62,6 @@
     <div class="card-image">
       <%= image_tag ("internet-globe.png") %>
     </div>
-    <div class="description"><%= element.description %></div>
     <% unless element.element_link.empty?%>
       <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
         <i class="material-icons">link</i>

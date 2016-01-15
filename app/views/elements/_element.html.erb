@@ -5,108 +5,70 @@
 ​
  <!-- image -->
   <% if element.image.file? %>
-  <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
+    <div class="title"><%= element.title %></div>
     <div class="card-image">
       <%= image_tag element.image.url, class: "materialboxed" %>
     </div>
-    <% if element.element_link.empty?%>
-    <% else %>
+    <% unless element.element_link.empty?%>
       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
          <i class="material-icons">link</i>
-         <a href="<%=element.element_link%>"></a>
-       <% end %>
-    <% end %>
+       <% end #link_to %>
+    <% end #unless %>
+    <div class="description"><%= element.description %></div>
+  <% end #if element.image.file? %>
 
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
-  <% end %>
-
-
+  <!-- document  -->
   <%if element.document.file? %>
+    <div class="title"><%= element.title %></div>
     <div class="card-image">
       <%= link_to element.document.url, :target => '_blank' do %>
         <%= image_tag ("documentlogo.png") %>
-      <% end %>
+      <% end #link_to %>
     </div>
-    <% if element.element_link.empty?%>
-    <% else %>
+    <% unless element.element_link.empty?%>
       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
         <i class="material-icons">link</i>
-        <a href="<%=element.element_link%>"></a>
-      <% end %>
-    <% end %>
+      <% end #link_to %>
+    <% end #unless %>
+    <div class="description"><%= element.description %></div>
+  <% end #if element.document.file? %>
 ​
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
-​
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
-  <% end %>
-​
+  <!-- ​audio -->
   <% if element.audio.file? %>
+    <div class="title"><%= element.title %></div>
     <div class="card-image">
       <%= link_to element.audio.url, :target => '_blank' do %>
         <%= image_tag ("musiclogo.png") %>
-      <% end %>
+      <% end #link_to %>
     </div>
-    <% if element.element_link.empty?%>
-    <% else %>
+    <% unless element.element_link.empty?%>
       <%= link_to element.element_link, class: 'right', :target => '_blank' do %>
         <i class="material-icons">link</i>
-        <a href="<%=element.element_link%>"></a>
-      <% end %>
-    <% end %>
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
+      <% end #link_to%>
+    <% end #unless%>
+    <div class="description"><%= element.description %></div>
+  <% end #if element.audio.file? %>
 ​
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
-  <% end %>
-​
-
   <!-- Just a note -->
 
   <% if element.element_link.empty? && !element.image? && !element.document? && !element.audio?  %>
-    <div class="card-image">
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
-​
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
-    </div>
+    <div class="title"><%= element.title %></div>
+​    <div class="description"><%= element.description %></div>
   <% end %>
 ​
   <!-- Link -->
   <% if !element.image? && !element.document? && !element.audio? && element.element_link.present?%>
+    <div class="title"><%= element.title %></div>
     <div class="card-image">
-    <%#=# link_to element.element_link, :target => '_blank' do %>
       <%= image_tag ("internet-globe.png") %>
-    <% if element.title %>
-      <div class="title"><%= element.title %></div>
-    <% end %>
-​
-    <% if element.description %>
-      <div class="description"><%= element.description %></div>
-    <% end %>
-
-    <%# end %>
     </div>
-    <% if element.element_link.empty?%>
-    <% else %>
+    <div class="description"><%= element.description %></div>
+    <% unless element.element_link.empty?%>
       <%= link_to element.element_link, :target => "_blank", class: 'right' do %>
         <i class="material-icons">link</i>
-        <a href="<%=element.element_link%>"></a>
-      <% end %>
-    <% end %>
+      <% end #link_to %>
+    <% end #unless %>
+​    <div class="description"><%= element.description %></div>
   <% end %>
 
 </div>

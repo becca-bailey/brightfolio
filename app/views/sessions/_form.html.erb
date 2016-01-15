@@ -1,9 +1,9 @@
-<!-- <div class="errors">
-<i class="material-icons prefix">info</i>
+<div class="errors">
   <% if flash[:danger] %>
+    <i class="material-icons prefix">info</i>
     <%= flash[:danger] %>
   <% end %>
-</div> -->
+</div>
 
 <%= form_for(:session, url: login_path) do |f| %>
   <div class="field">

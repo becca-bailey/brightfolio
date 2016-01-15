@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :folios, except: :show do
-    resources :elements, except: :show
+    resources :elements
   end
 # resources :books, except: :update
   get "login" => "sessions#new"

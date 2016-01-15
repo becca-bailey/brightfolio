@@ -12,3 +12,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( logo.png )
 Rails.application.config.assets.precompile += %w( twitter.png )
 Rails.application.config.assets.precompile += %w( facebook.png )
+Rails.application.config.assets.precompile += %w( teacher.png )
+Rails.application.config.assets.precompile += %w( designer.png )
+Rails.application.config.assets.precompile += %w( musician.png )

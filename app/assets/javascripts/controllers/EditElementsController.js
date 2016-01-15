@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 function clickToEdit() {
   $("#container").on("dblclick", ".element", function() {
+    console.log("clicked");
     var elementView = new ElementView();
     var elm_id = $(this).attr("id");
     // growShrink("#" + elm_id);

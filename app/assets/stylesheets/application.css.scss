@@ -49,12 +49,12 @@ footer {
 }
 
 .folio_card {
-  width: 350px;
+  width: 30%;
   margin-bottom: 40px;
 }
 
 #folio-page {
-  background-image: url("https://source.unsplash.com/random/1200x800");
+  background-image: url("https://source.unsplash.com/user/beccanelson/likes/1200x800");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -110,10 +110,9 @@ footer {
   color: blue;
 }*/
 
-/*#card {
-  box-shadow: none;
-  border: 3pt;
-}*/
+.card {
+  background-color: black;
+}
 
 .done {
   margin-top: 5px;
@@ -121,8 +120,9 @@ footer {
 
 .block {
   display: block;
-  width: 40%;
+  width: 30%;
 }
+
 .title {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -130,10 +130,10 @@ footer {
   color: teal;
   font-size: 24px;
   text-align: center;
-  padding: 5%;
+  /*padding: 5%;*/
   line-height: 40px;
   letter-spacing: 1px;
-  /*margin-top: -30px;*/
+  margin-top: -30px;
 }
 
 div.title {
@@ -146,7 +146,7 @@ div.title {
   text-align: center;
   /*color: white;*/
   background-color: black;
-  margin-top: -40px;
+  /*margin-top: -40px;*/
 }
 
 /*icons*/
@@ -156,17 +156,17 @@ div.title {
   color: #107F80;
   /*float: right;*/
 }
-.icon p {
+/*.icon p {
 
-}
+}*/
 .icons {
 float: right;
 
 }
 
 a.right {
-  position: absolute !important;
-  bottom: 2px;
+  /*position: absolute !important;*/
+  /*bottom: 2px;*/
   right: 5px;
 }
 
@@ -180,6 +180,12 @@ margin: 0 8%;
   padding: 1em;
 }
 
+nav i.material-icons {
+    display: block;
+    font-size: 3rem;
+    height: 56px;
+    line-height: 56px;
+}
 
 pre {
  white-space: pre-wrap;       /* css-3 */
@@ -208,6 +214,12 @@ pre {
 }
 .card_img {
   /*box-shadow: 0;*/
+}
+
+.home {
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: 300px;
 }
 
 /* =Top Bar
@@ -311,9 +323,9 @@ pre {
 
 /* five possible colors for fonts for drop down */
 
-.black-font {
+/*.black-font {
   color: #000000;
-}
+}*/
 
 .brown-font {
   color: #A52A2A;
@@ -481,6 +493,7 @@ nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   font-size: inherit;
   text-transform: inherit;
   background: none;
+  height: 40px;
 }
 
 /*.btn {
@@ -492,7 +505,7 @@ nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 /* collapsible */
 
 #folio-page .collapsible-header {
-  background-color: rgba(255,255,255,.7)
+      background-color: hsla(0, 0%, 0%, 0.65);
 }
 
 .collapsible-header {
@@ -530,6 +543,7 @@ padding: 0 10px;
 
 .collapsible-body {
   background-color: white;
+  opacity: 10;
 }
 
 ul.collapsible {
@@ -663,14 +677,14 @@ a.back {
   background-color: #FCBC34;
 }
 
-.btn-floating i{
+.btn-floating i {
   font-size: 30px;
 }
 
 /*Link styles*/
 a:link { color: #F9B029; }
-a:visited { color: #F9B029; }
-a:hover { color: #FF702A; }
+a:visited { color: #ffffff; }
+a:hover { color: #FCBC34; }
 a:active { color: #107F80; }
 
 h1 {
@@ -803,3 +817,29 @@ background-color: blue;
 .indicators .indicator-item {
     background-color: #107F80;
 }
+
+
+.btn, .btn-large, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    outline: 0;
+    padding: 0px 2.5rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container-clear {
+  margin: 0 auto;
+  padding: 5%;
+  width: 95%;
+  height: 100%;
+  /*background-color: #F2F2F2;*/
+  /*border-radius: 30px;*/
+  margin-top: 30px;
+}
+

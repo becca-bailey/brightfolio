@@ -63,6 +63,8 @@ footer {
 #folio-page::after {
   content: "";
   background-image: url("https://source.unsplash.com/user/beccanelson/likes/1200x800");
+  background-size: cover;
+  background-attachment: fixed;
   opacity: 0.2;
   top: 0;
   left: 0;
@@ -696,7 +698,7 @@ a.back {
 
 /*Link styles*/
 a:link { color: #F9B029; }
-a:visited { color: #ffffff; }
+a:visited { color: #F9B029; }
 a:hover { color: #FCBC34; }
 a:active { color: #107F80; }
 

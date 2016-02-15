@@ -53,10 +53,23 @@ footer {
   margin-bottom: 40px;
 }
 
-#folio-page {
+// #folio-page {
+//   background-image: url("https://source.unsplash.com/user/beccanelson/likes/1200x800");
+//   background-size: cover;
+//   background-attachment: fixed;
+
+// }
+
+#folio-page::after {
+  content: "";
   background-image: url("https://source.unsplash.com/user/beccanelson/likes/1200x800");
-  background-size: cover;
-  background-attachment: fixed;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 #new-folio {
@@ -137,7 +150,7 @@ footer {
 }
 
 div.title {
-  background-color: none;
+  padding: 1%;
 }
 .description {
   padding: 3% 4% 3% 4%;
@@ -547,11 +560,11 @@ padding: 0 10px;
 }
 
 ul.collapsible {
-  /*background-image: url(primary_img); */
   margin-top: 0px;
-  background-color: none;
+  background-color: #000000;
   font-size: 12px;
   color: #107F80;
+  // padding: 1%;
 }
 
 /*.div.collapsible-body*/
@@ -843,3 +856,16 @@ background-color: blue;
   margin-top: 30px;
 }
 
+a.share-popup:visited {
+  color: #F9B029;
+}
+
+aside.icons.col.m3.right {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+
+.persona {
+  color: #ffffff;
+}

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160112152323) do
     t.string   "citation"
     t.string   "element_link"
     t.string   "font"
+    t.string   "color"
     t.string   "width"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
